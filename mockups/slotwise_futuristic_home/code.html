@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-surface dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      "colors": {
+        "tertiary-fixed-dim": "#d0bcff",
+        "on-surface-variant": "#9ca3af",
+        "surface-tint": "#c0c1ff",
+        "inverse-primary": "#494bd6",
+        "secondary": "#4cd7f6",
+        "on-tertiary-fixed-variant": "#5516be",
+        "surface-dim": "#0a0e17",
+        "surface-bright": "#353943",
+        "primary-fixed-dim": "#c0c1ff",
+        "on-primary-fixed": "#07006c",
+        "on-tertiary-container": "#340080",
+        "on-tertiary-fixed": "#23005c",
+        "on-error": "#690005",
+        "error": "#ffb4ab",
+        "tertiary-container": "#a078ff",
+        "primary-container": "#6366f1",
+        "tertiary": "#d0bcff",
+        "outline-variant": "rgba(255, 255, 255, 0.08)",
+        "on-secondary-fixed": "#001f26",
+        "on-primary-fixed-variant": "#2f2ebe",
+        "on-surface": "#f3f4f6",
+        "on-secondary": "#003640",
+        "secondary-fixed": "#acedff",
+        "surface-container-highest": "#242a38",
+        "on-primary-container": "#e0e7ff",
+        "on-primary": "#ffffff",
+        "tertiary-fixed": "#e9ddff",
+        "outline": "#6b7280",
+        "surface-variant": "#1c2233",
+        "surface-container-low": "#111624",
+        "primary-fixed": "#e1e0ff",
+        "on-tertiary": "#3c0091",
+        "surface-container-high": "#1e2638",
+        "surface": "#0a0e1a",
+        "on-secondary-container": "#00424e",
+        "surface-container": "#151b2b",
+        "surface-container-lowest": "#06080f",
+        "inverse-on-surface": "#2c303a",
+        "secondary-container": "rgba(76, 215, 246, 0.15)",
+        "background": "#0a0e1a",
+        "secondary-fixed-dim": "#4cd7f6",
+        "on-error-container": "#ffdad6",
+        "on-secondary-fixed-variant": "#004e5c",
+        "error-container": "#93000a",
+        "inverse-surface": "#dfe2ef",
+        "primary": "#818cf8",
+        "on-background": "#f3f4f6"
+      },
+      "borderRadius": {
+        "DEFAULT": "0.25rem",
+        "lg": "0.5rem",
+        "xl": "0.75rem",
+        "2xl": "1rem",
+        "full": "9999px"
+      },
+      "spacing": {
+        "margin": "1rem",
+        "space-md": "1rem",
+        "space-lg": "1.5rem",
+        "space-xl": "2rem",
+        "margin-tablet": "1.5rem",
+        "space-sm": "0.75rem",
+        "gutter": "1rem",
+        "margin-desktop": "2rem",
+        "gutter-desktop": "1.5rem",
+        "space-xs": "0.5rem"
+      },
+      "fontFamily": {
+        "body-md": ["Inter"],
+        "body-sm": ["Inter"],
+        "headline-lg": ["Plus Jakarta Sans"],
+        "headline-xl-mobile": ["Plus Jakarta Sans"],
+        "label-sm": ["Inter"],
+        "headline-sm": ["Plus Jakarta Sans"],
+        "label-lg": ["Inter"],
+        "headline-md": ["Plus Jakarta Sans"],
+        "label-md": ["Inter"],
+        "headline-lg-mobile": ["Plus Jakarta Sans"],
+        "body-lg": ["Inter"],
+        "headline-xl": ["Plus Jakarta Sans"],
+        "mono": ["JetBrains Mono"]
+      },
+      "fontSize": {
+        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+        "body-sm": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "600"}],
+        "headline-xl-mobile": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+        "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "500"}],
+        "headline-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+        "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+        "headline-md": ["22px", {"lineHeight": "28px", "fontWeight": "700"}],
+        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+        "headline-xl": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+      }
+    }
+  }
+}</script><style>
+  @layer base {
+    body { overscroll-behavior: none; }
+    .pb-safe { padding-bottom: calc(env(safe-area-inset-bottom, 0px)); }
+    .pt-safe { padding-top: calc(env(safe-area-inset-top, 0px)); }
+  }
+  @keyframes softPulse {
+    0%, 100% {
+      transform: scale(1);
+      box-shadow: 0 0 20px rgba(99,102,241,0.45), 0 0 35px rgba(76,215,246,0.25);
+    }
+    50% {
+      transform: scale(1.05);
+      box-shadow: 0 0 32px rgba(76,215,246,0.65), 0 0 50px rgba(99,102,241,0.45);
+    }
+  }
+  .animate-soft-pulse { animation: softPulse 3s cubic-bezier(0.4,0,0.6,1) infinite; }
+  ::-webkit-scrollbar { display: none; }
+
+  /* Micro-animation: Badge subtle shimmer */
+  @keyframes badgeShimmer {
+    0% { background-position: -200% center; }
+    100% { background-position: 200% center; }
+  }
+  .animate-badge-shimmer {
+    background: linear-gradient(90deg, rgba(76,215,246,0.08) 0%, rgba(76,215,246,0.28) 50%, rgba(76,215,246,0.08) 100%);
+    background-size: 200% 100%;
+    animation: badgeShimmer 4s ease-in-out infinite;
+  }
+
+  /* Micro-animation: Button neon light sweep */
+  .btn-shimmer-sweep {
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-shimmer-sweep::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -150%;
+    width: 60%;
+    height: 200%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
+    transform: rotate(25deg);
+    transition: none;
+    pointer-events: none;
+  }
+  .btn-shimmer-sweep:hover::after, .btn-shimmer-sweep:active::after {
+    animation: lightSweep 1.1s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  @keyframes lightSweep {
+    0% { left: -150%; }
+    100% { left: 220%; }
+  }
+
+  /* Concentric radar ripple for AI status indicators */
+  @keyframes concentricPing {
+    0% { transform: scale(0.85); opacity: 0.9; }
+    75%, 100% { transform: scale(2.6); opacity: 0; }
+  }
+  .animate-concentric {
+    animation: concentricPing 2.4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+  }
+
+  /* Floating levitation for AI Assistant widget */
+  @keyframes gentleLevitate {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-4px); }
+  }
+  .animate-levitate {
+    animation: gentleLevitate 4.5s ease-in-out infinite;
+  }
+
+  /* Subtle pulsing glow for telemetry metrics */
+  @keyframes metricGlow {
+    0%, 100% { filter: drop-shadow(0 0 8px rgba(99,102,241,0.25)); }
+    50% { filter: drop-shadow(0 0 16px rgba(76,215,246,0.55)); }
+  }
+  .animate-metric-glow {
+    animation: metricGlow 3.5s ease-in-out infinite;
+  }
+
+  /* Glowing border trace and 3D lift for provider cards */
+  .card-lift-glow {
+    transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.28s ease, border-color 0.28s ease;
+  }
+  .card-lift-glow:hover, .card-lift-glow:focus-within {
+    transform: translateY(-4px) scale(1.015);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.5), 0 0 20px rgba(76,215,246,0.25);
+    border-color: rgba(76, 215, 246, 0.45);
+  }
+
+  /* Star dust particle canvas styling */
+  #particles-ambient {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -5;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, ::after, ::before {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+    #particles-ambient { display: none; }
+  }
+</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head><body class="bg-[#0a0e1a] text-on-surface font-body-md text-body-md flex flex-col min-h-screen relative antialiased selection:bg-secondary/30 selection:text-secondary">
+<!-- Glowing ambient radial gradients -->
+<div class="fixed top-0 left-1/2 -translate-x-1/2 w-[380px] h-[320px] bg-gradient-to-b from-primary/15 via-secondary/10 to-transparent blur-[110px] pointer-events-none -z-10"></div>
+<div class="fixed top-[450px] -right-20 w-[280px] h-[280px] bg-secondary/10 blur-[90px] pointer-events-none -z-10"></div>
+<div class="fixed bottom-24 -left-20 w-[260px] h-[260px] bg-primary/15 blur-[95px] pointer-events-none -z-10"></div>
+<!-- Background Floating Cyber Ambient Dust Canvas -->
+<canvas id="particles-ambient"></canvas>
+<header class="fixed top-0 w-full z-50 pt-safe bg-[#0d1322]/80 backdrop-blur-xl border-b border-white/[0.08] shadow-[0_4px_30px_rgba(0,0,0,0.6)]"><div class="h-16 px-margin flex items-center justify-between"><div class="flex items-center gap-space-xs"><img alt="SlotWise Logo" class="h-8 w-auto object-contain brightness-110 drop-shadow-[0_0_8px_rgba(99,102,241,0.5)] transition-transform duration-300 hover:scale-105" src="https://lh3.googleusercontent.com/aida/ALJJyrDGgae7CbIx5jGi59veDxiDB4sGIatelfzKOeSUg_xYUi6Ia_qwEMmZqEQMuDxErijYUtV5nGMUwfhcQ3DO0I7aC2UDjkfoucSvOv3wKM_FVGQj36wK8GMyjx7uxXZLzotOEDoo9az9x3pnA8T0J2mtzpm2AZzXhOVdmZ_VFETawp-uUPDsKXv-dENI9t9G_fRAI4gNUmCGw9MdGjAbTE5lJs3pLZDLww8fKEQZMjo"/><div class="flex items-center gap-1.5"><span class="font-headline-sm text-headline-sm font-bold text-white tracking-tight drop-shadow-sm">SlotWise</span><span class="px-2 py-0.5 rounded-full bg-secondary/15 text-secondary border border-secondary/30 font-mono text-[10px] font-bold uppercase tracking-wider shadow-[0_0_10px_rgba(76,215,246,0.25)] hover:border-secondary/60 transition-colors">AI v2.4</span></div></div><div class="flex items-center gap-space-xs"><button aria-label="Notifications" class="w-10 h-10 flex items-center justify-center rounded-xl bg-white/[0.04] border border-white/[0.08] text-on-surface-variant hover:text-white hover:bg-white/[0.08] hover:border-secondary/30 transition-all active:scale-95 group relative" type="button"><span class="material-symbols-outlined text-[20px] group-hover:scale-110 transition-transform">notifications</span><span class="absolute 2.5 top-2.5 right-2.5 w-1.5 h-1.5 rounded-full bg-secondary shadow-[0_0_6px_rgba(76,215,246,0.8)]"></span></button><div class="w-10 h-10 flex items-center justify-center relative cursor-pointer group"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-2 ring-secondary/50 shadow-[0_0_12px_rgba(76,215,246,0.35)] group-hover:ring-secondary transition-all group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuY0Ce_R5dzMZxLQf_Zkz1HLIaR_cPZKERW93_jLCV5QQVyOuQDCjFBtddKEmaDMGtHRvxsEUNcD0xHsn6vr1FnJZzHRuaElLybBoryj4VKpRwoNpemb69oLPx1Jyo-6g4uTgg5v0vY1JIfyT6CUUkQWknyN0L6_KT6xV4bh-jzjttQMkaZMZP2SWCGU2uWVuLhaesYcREfisPitX3VTmXjdXQJ8fATmCoEBfrN6M"/><span class="absolute bottom-1 right-1 w-2 h-2 rounded-full bg-secondary ring-2 ring-[#0d1322] shadow-[0_0_8px_rgba(76,215,246,0.9)]"></span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-32 bg-transparent"><div class="flex flex-col w-full pb-6 px-margin space-y-space-lg">
+<!-- Hero Header Section -->
+<section class="flex flex-col pt-3 relative overflow-hidden">
+<div class="animate-badge-shimmer inline-flex items-center gap-2 px-3 py-1 rounded-full border border-secondary/35 w-fit mb-3.5 backdrop-blur-md shadow-[0_0_16px_rgba(76,215,246,0.2)] transition-transform hover:scale-[1.02]">
+<div class="relative flex items-center justify-center w-2 h-2">
+<span class="absolute w-3.5 h-3.5 rounded-full bg-secondary/40 animate-concentric"></span>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary shadow-[0_0_8px_rgba(76,215,246,0.9)]"></span>
+</div>
+<span class="material-symbols-outlined text-secondary text-[14px]">bolt</span>
+<span class="font-mono text-[11px] font-semibold text-secondary tracking-widest uppercase">Smart Scheduling Engine</span>
+</div>
+<h1 class="font-headline-xl-mobile text-headline-xl-mobile text-white tracking-tight leading-tight">
+      Find and book the right appointment in <span class="bg-gradient-to-r from-secondary via-primary to-tertiary-fixed bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(76,215,246,0.4)]">seconds</span>
+</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2 max-w-xs leading-relaxed">
+      Instant AI-powered matching &amp; live calendar availability across top rated specialists.
+    </p>
+</section>
+<!-- Search Bar Card (Glassmorphic Command Console) -->
+<section class="w-full bg-[#111728]/85 backdrop-blur-xl rounded-2xl border border-white/[0.1] p- space-md p-4 flex flex-col space-y-space-sm relative shadow-[0_8px_32px_rgba(0,0,0,0.4),0_0_0_1px_rgba(99,102,241,0.15)] transition-all duration-300 hover:border-white/[0.16] hover:shadow-[0_12px_40px_rgba(0,0,0,0.5),0_0_20px_rgba(99,102,241,0.2)]">
+<!-- Service Category Input -->
+<div class="flex items-center gap-space-xs bg-[#0b0f1c]/90 border border-white/[0.08] focus-within:border-secondary/70 focus-within:shadow-[0_0_18px_rgba(76,215,246,0.3)] focus-within:bg-[#0d1424] px-space-sm py-2.5 rounded-xl transition-all duration-200">
+<span class="material-symbols-outlined text-secondary text-[20px] transition-transform duration-200 group-focus-within:scale-110">search</span>
+<input class="bg-transparent font-body-md text-body-md text-white placeholder:text-outline/70 w-full focus:outline-none" id="service-search-input" placeholder="Therapist, Haircut, Dentist..." type="text"/>
+<button aria-label="Voice Search" class="text-on-surface-variant hover:text-secondary hover:scale-110 active:scale-95 transition-all p-1" type="button">
+<span class="material-symbols-outlined text-[18px]">mic</span>
+</button>
+</div>
+<!-- Segmented Location / Virtual Toggle -->
+<div class="grid grid-cols-2 p-1 bg-[#0b0f1c] border border-white/[0.06] rounded-xl text-center" id="search-mode-toggle">
+<button class="py-2 rounded-lg font-label-md text-label-md font-semibold transition-all duration-200 bg-gradient-to-r from-primary/30 to-secondary/20 text-secondary border border-secondary/30 shadow-[0_0_12px_rgba(76,215,246,0.15)] flex items-center justify-center gap-1.5 active:scale-98" data-mode="in-person" type="button">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+        In-Person
+      </button>
+<button class="py-2 rounded-lg font-label-md text-label-md font-medium text-on-surface-variant hover:text-white transition-all duration-200 flex items-center justify-center gap-1.5 active:scale-98" data-mode="virtual" type="button">
+<span class="material-symbols-outlined text-[16px]">videocam</span>
+        Virtual Visit
+      </button>
+</div>
+<!-- Quick Location Input Pill (Contextual) -->
+<div class="flex items-center justify-between px-space-sm py-2 rounded-xl bg-[#0b0f1c]/70 border border-white/[0.05] transition-colors hover:border-white/[0.12]" id="location-sub-pill">
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="material-symbols-outlined text-secondary text-[18px]">near_me</span>
+<span class="font-body-sm text-body-sm text-gray-300 truncate font-mono">Current Location • Downtown</span>
+</div>
+<button class="font-label-sm text-label-sm text-secondary hover:text-cyan-300 font-semibold shrink-0 transition-transform active:scale-95 uppercase tracking-wider" type="button">Change</button>
+</div>
+<!-- Find Slots CTA Button with Neon Ripple Shimmer -->
+<button class="btn-shimmer-sweep w-full h-12 rounded-xl bg-gradient-to-r from-primary via-indigo-500 to-secondary text-white font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 shadow-[0_0_24px_rgba(99,102,241,0.5)] active:scale-[0.98] hover:shadow-[0_0_32px_rgba(76,215,246,0.65),0_0_12px_rgba(255,255,255,0.2)] transition-all tracking-wide cursor-pointer" id="btn-find-slots" type="button">
+<span class="material-symbols-outlined text-[20px] transition-transform duration-300 group-hover:rotate-12">calendar_today</span>
+      Find Instant Slots
+    </button>
+</section>
+<!-- Floating AI Assistant Banner Card (Cyberpunk HUD Widget with gentle levitation) -->
+<section class="animate-levitate w-full bg-[#10172b]/90 backdrop-blur-xl p-space-md rounded-2xl border border-secondary/35 shadow-[0_0_25px_rgba(76,215,246,0.15)] relative overflow-hidden flex items-center justify-between gap-space-sm transition-all hover:border-secondary/60 hover:shadow-[0_0_30px_rgba(76,215,246,0.3)]">
+<div class="flex items-start gap-space-xs min-w-0 z-10">
+<div class="relative w-10 h-10 rounded-xl bg-gradient-to-br from-primary/30 to-secondary/30 border border-secondary/40 text-secondary flex items-center justify-center shadow-[0_0_16px_rgba(76,215,246,0.35)] shrink-0 group">
+<span class="material-symbols-outlined text-[20px] text-secondary">smart_toy</span>
+<span class="absolute inset-0 rounded-xl border border-secondary/40 animate-ping pointer-events-none opacity-25"></span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<p class="font-label-lg text-label-lg font-bold text-white tracking-tight">SlotWise AI Helper</p>
+<div class="relative flex items-center justify-center w-2 h-2 ml-0.5">
+<span class="absolute w-3.5 h-3.5 rounded-full bg-emerald-400/40 animate-concentric"></span>
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_6px_rgba(52,211,153,0.9)]"></span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1">Need ideal times around your busy day?</p>
+</div>
+</div>
+<button class="shrink-0 z-10 px-3.5 py-1.5 rounded-xl bg-secondary/15 hover:bg-secondary/25 border border-secondary/40 text-secondary font-mono text-[12px] font-bold flex items-center gap-1 shadow-[0_0_12px_rgba(76,215,246,0.2)] active:scale-95 transition-all hover:shadow-[0_0_16px_rgba(76,215,246,0.4)]" type="button">
+<span>Chat Now</span>
+<span class="material-symbols-outlined text-[14px] transition-transform duration-200 group-hover:translate-x-0.5">arrow_forward</span>
+</button>
+<div class="absolute -right-8 -bottom-8 w-28 h-28 rounded-full bg-secondary/20 blur-2xl pointer-events-none"></div>
+<div class="absolute -left-8 -top-8 w-24 h-24 rounded-full bg-primary/20 blur-2xl pointer-events-none"></div>
+</section>
+<!-- How It Works Carousel -->
+<section class="flex flex-col space-y-space-sm">
+<div class="flex items-center justify-between">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-white tracking-tight flex items-center gap-2">
+<span>How It Works</span>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary shadow-[0_0_8px_rgba(76,215,246,0.8)]"></span>
+</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Effortless coordination in 3 steps</p>
+</div>
+<div class="flex gap-1.5">
+<button aria-label="Previous step" class="w-8 h-8 rounded-xl bg-white/[0.05] border border-white/[0.08] hover:border-secondary/40 text-on-surface-variant hover:text-white flex items-center justify-center transition-all active:scale-95 disabled:opacity-40" id="step-prev">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button aria-label="Next step" class="w-8 h-8 rounded-xl bg-white/[0.05] border border-white/[0.08] hover:border-secondary/40 text-white flex items-center justify-center transition-all active:scale-95" id="step-next">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Carousel Container -->
+<div class="flex gap-space-sm overflow-x-auto snap-x snap-mandatory scroll-smooth pb-2 -mx-margin px-margin" id="steps-carousel">
+<!-- Step 1 -->
+<div class="card-lift-glow min-w-[245px] max-w-[245px] snap-center bg-[#111728]/80 backdrop-blur-md border border-white/[0.1] p-space-md rounded-2xl shadow-[0_8px_24px_rgba(0,0,0,0.3)] flex flex-col justify-between space-y-space-md transition-all group">
+<div class="flex justify-between items-start">
+<div class="w-11 h-11 rounded-xl bg-primary/20 border border-primary/40 text-primary flex items-center justify-center shadow-[0_0_16px_rgba(99,102,241,0.3)] group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[24px]">psychology</span>
+</div>
+<span class="font-mono text-headline-sm font-extrabold text-white/20 group-hover:text-primary/60 transition-colors">01</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-white font-bold">Tell Us Needs</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5 leading-relaxed">Use natural language: "Need quick tooth polish this Thursday afternoon".</p>
+</div>
+<div class="flex items-center gap-1.5 text-primary font-mono text-[11px] font-bold tracking-wider uppercase">
+<span>AI Natural Match</span>
+<span class="material-symbols-outlined text-[14px]">auto_awesome</span>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="card-lift-glow min-w-[245px] max-w-[245px] snap-center bg-[#111728]/80 backdrop-blur-md border border-white/[0.1] p-space-md rounded-2xl shadow-[0_8px_24px_rgba(0,0,0,0.3)] flex flex-col justify-between space-y-space-md transition-all group">
+<div class="flex justify-between items-start">
+<div class="w-11 h-11 rounded-xl bg-secondary/15 border border-secondary/40 text-secondary flex items-center justify-center shadow-[0_0_16px_rgba(76,215,246,0.3)] group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[24px]">event_available</span>
+</div>
+<span class="font-mono text-headline-sm font-extrabold text-white/20 group-hover:text-secondary/60 transition-colors">02</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-white font-bold">Pick Smart Slots</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5 leading-relaxed">Direct calendar sync surfaces un-cancelled, guaranteed open times.</p>
+</div>
+<div class="flex items-center gap-1.5 text-secondary font-mono text-[11px] font-bold tracking-wider uppercase">
+<span>Live Sync Sync</span>
+<span class="material-symbols-outlined text-[14px]">sync</span>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="card-lift-glow min-w-[245px] max-w-[245px] snap-center bg-[#111728]/80 backdrop-blur-md border border-white/[0.1] p-space-md rounded-2xl shadow-[0_8px_24px_rgba(0,0,0,0.3)] flex flex-col justify-between space-y-space-md transition-all group">
+<div class="flex justify-between items-start">
+<div class="w-11 h-11 rounded-xl bg-tertiary/20 border border-tertiary/40 text-tertiary flex items-center justify-center shadow-[0_0_16px_rgba(208,188,255,0.3)] group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[24px]">verified</span>
+</div>
+<span class="font-mono text-headline-sm font-extrabold text-white/20 group-hover:text-tertiary/60 transition-colors">03</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-white font-bold">Auto Cal Sync</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5 leading-relaxed">Instant invite sent to Google &amp; Outlook with zero manual entry.</p>
+</div>
+<div class="flex items-center gap-1.5 text-tertiary font-mono text-[11px] font-bold tracking-wider uppercase">
+<span>Zero Conflict</span>
+<span class="material-symbols-outlined text-[14px]">done_all</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Providers Horizontal Scroll -->
+<section class="flex flex-col space-y-space-sm">
+<div class="flex items-center justify-between">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-white tracking-tight flex items-center gap-2">
+<span>Featured Providers</span>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary shadow-[0_0_8px_rgba(76,215,246,0.8)]"></span>
+</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Top-rated availability right now</p>
+</div>
+<a class="font-mono text-[12px] text-secondary hover:text-cyan-300 font-semibold flex items-center gap-0.5 uppercase tracking-wider transition-colors" href="#">
+        See All
+        <span class="material-symbols-outlined text-[16px] transition-transform duration-200 hover:translate-x-1">chevron_right</span>
+</a>
+</div>
+<!-- Provider Cards Scroller -->
+<div class="flex gap-space-sm overflow-x-auto pb-2 -mx-margin px-margin">
+<!-- Card 1: Dr. Aarav Mehta -->
+<div class="card-lift-glow min-w-[225px] max-w-[225px] bg-[#111728]/85 backdrop-blur-md border border-white/[0.09] rounded-2xl p-3.5 shadow-[0_8px_24px_rgba(0,0,0,0.35)] flex flex-col justify-between space-y-3 relative group">
+<div class="relative w-full h-28 rounded-xl overflow-hidden bg-[#0a0e17]">
+<img class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500 ease-out" data-alt="Modern close-up portrait of Dr. Aarav Mehta, a male general physician wearing scrubs with a stethoscope in a warm sunlit clinical studio, friendly welcoming expression, photography, soft bokeh lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNUkkJaWTrhWaaYnltySuRp4AZDfUt_04gPGLOnuiGNpaEsDWJB9KQWiBeHFaYjhpNmTWBo1a11qcTndEoMi7oQle8EJ_PC6c-nytzz4NAeFp1Hq93TatRqPC-qjbzwSUpcc2Mc_qStnUdk9BmS8AlEv2jESoh9U1yRipLRIiGrUOg9q1aFm9qO72z5BGHmbW7_kLHxO6UDiwTBkhx62KFu6z9cQ9VlOHKedadwfY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#0a0e17]/80 via-transparent to-transparent"></div>
+<div class="absolute top-2 right-2 px-2 py-0.5 rounded-full bg-[#0a0e17]/90 backdrop-blur-md border border-amber-400/30 flex items-center gap-1 shadow-[0_0_10px_rgba(245,158,11,0.25)]">
+<span class="material-symbols-outlined text-[12px] text-amber-400" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-mono text-[11px] font-bold text-white">4.9</span>
+</div>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-white font-bold truncate group-hover:text-secondary transition-colors">Dr. Aarav Mehta</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">General Physician</p>
+<div class="mt-2 inline-flex items-center gap-1.5 px-2 py-1 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 shadow-[0_0_10px_rgba(16,185,129,0.15)]">
+<div class="relative flex items-center justify-center w-2 h-2">
+<span class="absolute w-3 h-3 rounded-full bg-emerald-400/40 animate-concentric"></span>
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+</div>
+<span class="font-mono text-[11px] font-semibold">Next: Today 3:30 PM</span>
+</div>
+</div>
+<button class="btn-shimmer-sweep w-full py-2.5 rounded-xl bg-white/[0.05] hover:bg-gradient-to-r hover:from-primary hover:to-secondary border border-white/[0.1] hover:border-transparent text-secondary hover:text-white font-label-md text-label-md font-bold transition-all text-center tracking-wide active:scale-[0.98] shadow-sm hover:shadow-[0_0_16px_rgba(76,215,246,0.35)]" type="button">
+          Quick Book
+        </button>
+</div>
+<!-- Card 2: Priya Nair -->
+<div class="card-lift-glow min-w-[225px] max-w-[225px] bg-[#111728]/85 backdrop-blur-md border border-white/[0.09] rounded-2xl p-3.5 shadow-[0_8px_24px_rgba(0,0,0,0.35)] flex flex-col justify-between space-y-3 relative group">
+<div class="relative w-full h-28 rounded-xl overflow-hidden bg-[#0a0e17]">
+<img class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500 ease-out" data-alt="Editorial portrait of Priya Nair, an expert female hair stylist in a chic aesthetic minimalist salon studio holding styling shears with warm ambient golden light and greenery, cinematic photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBprtOciv_O6dCiZRr8MM1dDIsjZG0p6fR8Js4EqfSwu27xDiNadVTj0W6bDiii8nPEtYXq_iqHDicqZlM_GmJPrMujDe6kT6lwdzs-JKiRG4tVyFn3ITGRbUDm9I66t31AICtKGLeJIxvxmkr5A0rIRzRVCzPhze2giim3J9Ir_sMjNJ0bW6H-YXyIptCKildiRvHajr3uc9YdPWEiLc9p-RQbaiEW6db9j7eHjcg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#0a0e17]/80 via-transparent to-transparent"></div>
+<div class="absolute top-2 right-2 px-2 py-0.5 rounded-full bg-[#0a0e17]/90 backdrop-blur-md border border-amber-400/30 flex items-center gap-1 shadow-[0_0_10px_rgba(245,158,11,0.25)]">
+<span class="material-symbols-outlined text-[12px] text-amber-400" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-mono text-[11px] font-bold text-white">4.8</span>
+</div>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-white font-bold truncate group-hover:text-secondary transition-colors">Priya Nair</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Hair Stylist</p>
+<div class="mt-2 inline-flex items-center gap-1.5 px-2 py-1 rounded-lg bg-white/[0.05] border border-white/[0.1] text-gray-300">
+<span class="material-symbols-outlined text-[13px] text-secondary">schedule</span>
+<span class="font-mono text-[11px] font-medium">Next: Tomorrow 11 AM</span>
+</div>
+</div>
+<button class="btn-shimmer-sweep w-full py-2.5 rounded-xl bg-white/[0.05] hover:bg-gradient-to-r hover:from-primary hover:to-secondary border border-white/[0.1] hover:border-transparent text-secondary hover:text-white font-label-md text-label-md font-bold transition-all text-center tracking-wide active:scale-[0.98] shadow-sm hover:shadow-[0_0_16px_rgba(76,215,246,0.35)]" type="button">
+          Quick Book
+        </button>
+</div>
+<!-- Card 3: Rohan Verma -->
+<div class="card-lift-glow min-w-[225px] max-w-[225px] bg-[#111728]/85 backdrop-blur-md border border-white/[0.09] rounded-2xl p-3.5 shadow-[0_8px_24px_rgba(0,0,0,0.35)] flex flex-col justify-between space-y-3 relative group">
+<div class="relative w-full h-28 rounded-xl overflow-hidden bg-[#0a0e17]">
+<img class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500 ease-out" data-alt="Action portrait of Rohan Verma, a male personal fitness coach in athletic training gear inside a contemporary gym facility with subtle motivational lighting, energetic and professional composition" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnjRb2sAje2NncLEYBuWA_-xf8ozToglkScAEn4fXwQSpChbLGdQawfZIRgl2Qpo8_ZMDoX231KOewCBkwdpuicJ8SUq1XSqJXQ2dibv1nJpcvo3yXopdeYUCgUqiIMBOtvo7RJou4Fgr53kR6zJP31EFJsomyLSPt3UuxRd6BwY6VQ_iEMg33hPTqwph5T3bhjCJsEujVxE5BgTtoNx1OaxOcCpzNRZEBWfuof9Y"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#0a0e17]/80 via-transparent to-transparent"></div>
+<div class="absolute top-2 right-2 px-2 py-0.5 rounded-full bg-[#0a0e17]/90 backdrop-blur-md border border-amber-400/30 flex items-center gap-1 shadow-[0_0_10px_rgba(245,158,11,0.25)]">
+<span class="material-symbols-outlined text-[12px] text-amber-400" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-mono text-[11px] font-bold text-white">5.0</span>
+</div>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-white font-bold truncate group-hover:text-secondary transition-colors">Rohan Verma</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Fitness Coach</p>
+<div class="mt-2 inline-flex items-center gap-1.5 px-2 py-1 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 shadow-[0_0_10px_rgba(16,185,129,0.15)]">
+<div class="relative flex items-center justify-center w-2 h-2">
+<span class="absolute w-3 h-3 rounded-full bg-emerald-400/40 animate-concentric"></span>
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+</div>
+<span class="font-mono text-[11px] font-semibold">Next: Today 5:00 PM</span>
+</div>
+</div>
+<button class="btn-shimmer-sweep w-full py-2.5 rounded-xl bg-white/[0.05] hover:bg-gradient-to-r hover:from-primary hover:to-secondary border border-white/[0.1] hover:border-transparent text-secondary hover:text-white font-label-md text-label-md font-bold transition-all text-center tracking-wide active:scale-[0.98] shadow-sm hover:shadow-[0_0_16px_rgba(76,215,246,0.35)]" type="button">
+          Quick Book
+        </button>
+</div>
+<!-- Card 4: Sara Khan -->
+<div class="card-lift-glow min-w-[225px] max-w-[225px] bg-[#111728]/85 backdrop-blur-md border border-white/[0.09] rounded-2xl p-3.5 shadow-[0_8px_24px_rgba(0,0,0,0.35)] flex flex-col justify-between space-y-3 relative group">
+<div class="relative w-full h-28 rounded-xl overflow-hidden bg-[#0a0e17]">
+<img class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500 ease-out" data-alt="Gentle portrait of Sara Khan, a female mental wellness counselor sitting in a warm inviting consulting office with soft textured cushions and calming pastel plant background, daylight photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwby2Ya8wdOV1Iwt1TUsFwpjFBgiNhYRbxUfz1HCZCFG2QiZZc6zLBl60eCWz-olQqD_6gQlJDwHP2c3jaHyHxmweiayoAtUjQJoK7h9cvL7sFNhraf-Gbfyhgj9PHpHckhWGIjkinfcRqLxOaVDtdSkl_3Qi3BglcUbEkt9-KrLaN_6iZRZAq7TjPtIxNSri9pKi2AIQyYKel4RdqXM8GZS_6eD8Io8Gh6OscgHM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#0a0e17]/80 via-transparent to-transparent"></div>
+<div class="absolute top-2 right-2 px-2 py-0.5 rounded-full bg-[#0a0e17]/90 backdrop-blur-md border border-amber-400/30 flex items-center gap-1 shadow-[0_0_10px_rgba(245,158,11,0.25)]">
+<span class="material-symbols-outlined text-[12px] text-amber-400" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-mono text-[11px] font-bold text-white">4.9</span>
+</div>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-white font-bold truncate group-hover:text-secondary transition-colors">Sara Khan</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Counselor • Virtual</p>
+<div class="mt-2 inline-flex items-center gap-1.5 px-2 py-1 rounded-lg bg-white/[0.05] border border-white/[0.1] text-gray-300">
+<span class="material-symbols-outlined text-[13px] text-secondary">videocam</span>
+<span class="font-mono text-[11px] font-medium">Next: Friday 2:00 PM</span>
+</div>
+</div>
+<button class="btn-shimmer-sweep w-full py-2.5 rounded-xl bg-white/[0.05] hover:bg-gradient-to-r hover:from-primary hover:to-secondary border border-white/[0.1] hover:border-transparent text-secondary hover:text-white font-label-md text-label-md font-bold transition-all text-center tracking-wide active:scale-[0.98] shadow-sm hover:shadow-[0_0_16px_rgba(76,215,246,0.35)]" type="button">
+          Quick Book
+        </button>
+</div>
+</div>
+</section>
+<!-- Key Metrics Banner with Cyber Glow Counters -->
+<section class="w-full bg-[#111728]/85 backdrop-blur-md rounded-2xl p-space-md border border-white/[0.08] shadow-[0_8px_30px_rgba(0,0,0,0.4)] transition-all hover:border-white/[0.14]">
+<div class="grid grid-cols-3 divide-x divide-white/[0.08] gap-1 text-center">
+<!-- Metric 1 -->
+<div class="flex flex-col items-center">
+<span class="font-mono text-headline-md font-extrabold text-primary flex items-center drop-shadow-[0_0_12px_rgba(99,102,241,0.4)] animate-metric-glow">
+<span class="counter" data-target="99.4">90.0</span>%
+</span>
+<span class="font-mono text-[10px] uppercase tracking-wider text-on-surface-variant mt-1">On-Time Rate</span>
+</div>
+<!-- Metric 2 -->
+<div class="flex flex-col items-center">
+<span class="font-mono text-headline-md font-extrabold text-secondary flex items-center drop-shadow-[0_0_12px_rgba(76,215,246,0.4)] animate-metric-glow" style="animation-delay: 1.2s;">
+<span class="counter" data-target="15">0</span>k+
+</span>
+<span class="font-mono text-[10px] uppercase tracking-wider text-on-surface-variant mt-1">Bookings</span>
+</div>
+<!-- Metric 3 -->
+<div class="flex flex-col items-center">
+<span class="font-mono text-headline-md font-extrabold text-white flex items-center gap-1 animate-metric-glow" style="animation-delay: 2.4s;">
+<span class="counter" data-target="4.9">3.0</span>
+<span class="material-symbols-outlined text-amber-400 text-[18px] drop-shadow-[0_0_8px_rgba(245,158,11,0.5)]" style="font-variation-settings: 'FILL' 1;">star</span>
+</span>
+<span class="font-mono text-[10px] uppercase tracking-wider text-on-surface-variant mt-1">Avg Rating</span>
+</div>
+</div>
+</section>
+<!-- Interactive Quick Time Slot Drawer Preview / Cyber Delight Hook -->
+<section class="bg-[#111728]/60 backdrop-blur-md rounded-2xl p-space-md border border-white/[0.06] flex flex-col space-y-space-xs transition-colors hover:border-white/[0.12]">
+<div class="flex items-center justify-between">
+<span class="font-mono text-[11px] font-bold uppercase tracking-widest text-secondary flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px]">flash_on</span>
+Trending Fast Slots
+</span>
+<span class="font-mono text-[11px] text-emerald-400 font-medium flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span> Live updates
+</span>
+</div>
+<div class="flex gap-2.5 overflow-x-auto py-1.5">
+<button class="slot-pill shrink-0 px-3.5 py-2 rounded-xl bg-[#0b0f1c] hover:bg-[#151c30] hover:border-secondary/40 border border-white/[0.08] text-gray-200 font-mono text-[12px] active:scale-95 transition-all shadow-sm flex items-center gap-1.5 cursor-pointer" type="button">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+        Today 4:00 PM • Express Cut
+      </button>
+<button class="slot-pill shrink-0 px-3.5 py-2 rounded-xl bg-[#0b0f1c] hover:bg-[#151c30] hover:border-secondary/40 border border-white/[0.08] text-gray-200 font-mono text-[12px] active:scale-95 transition-all shadow-sm flex items-center gap-1.5 cursor-pointer" type="button">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+        Today 6:15 PM • Physio Consult
+      </button>
+<button class="slot-pill shrink-0 px-3.5 py-2 rounded-xl bg-[#0b0f1c] hover:bg-[#151c30] hover:border-secondary/40 border border-white/[0.08] text-gray-200 font-mono text-[12px] active:scale-95 transition-all shadow-sm flex items-center gap-1.5 cursor-pointer" type="button">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+        Tomorrow 9:00 AM • Dental Scan
+      </button>
+</div>
+</section>
+</div>
+<script>
+  (function() {
+    // Ambient glowing particle system
+    const canvas = document.getElementById('particles-ambient');
+    if (canvas && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const ctx = canvas.getContext('2d');
+      let width = canvas.width = window.innerWidth;
+      let height = canvas.height = window.innerHeight;
+
+      window.addEventListener('resize', () => {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+      });
+
+      const particleCount = 28;
+      const particles = [];
+      const colors = ['rgba(76, 215, 246, ', 'rgba(129, 140, 248, ', 'rgba(208, 188, 255, '];
+
+      for (let i = 0; i < particleCount; i++) {
+        particles.push({
+          x: Math.random() * width,
+          y: Math.random() * height,
+          radius: Math.random() * 1.8 + 0.6,
+          speedY: Math.random() * 0.45 + 0.15,
+          speedX: (Math.random() - 0.5) * 0.25,
+          color: colors[Math.floor(Math.random() * colors.length)],
+          alpha: Math.random() * 0.6 + 0.2,
+          pulseSpeed: Math.random() * 0.02 + 0.008,
+          pulseVal: Math.random() * Math.PI
+        });
+      }
+
+      function renderParticles() {
+        ctx.clearRect(0, 0, width, height);
+
+        particles.forEach(p => {
+          p.y -= p.speedY;
+          p.x += p.speedX;
+          p.pulseVal += p.pulseSpeed;
+
+          // Wrap around top and sides
+          if (p.y < -10) p.y = height + 10;
+          if (p.x < -10) p.x = width + 10;
+          if (p.x > width + 10) p.x = -10;
+
+          const currentAlpha = p.alpha * (0.6 + 0.4 * Math.sin(p.pulseVal));
+
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+          ctx.fillStyle = p.color + currentAlpha + ')';
+          ctx.shadowBlur = 9;
+          ctx.shadowColor = p.color + '0.8)';
+          ctx.fill();
+        });
+
+        requestAnimationFrame(renderParticles);
+      }
+      renderParticles();
+    }
+
+    // Segmented toggle interactive behavior
+    const toggleContainer = document.getElementById('search-mode-toggle');
+    const locationPill = document.getElementById('location-sub-pill');
+    if (toggleContainer) {
+      const buttons = toggleContainer.querySelectorAll('button');
+      buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          buttons.forEach(b => {
+            b.classList.remove('bg-gradient-to-r', 'from-primary/30', 'to-secondary/20', 'text-secondary', 'border', 'border-secondary/30', 'shadow-[0_0_12px_rgba(76,215,246,0.15)]', 'font-semibold');
+            b.classList.add('text-on-surface-variant', 'font-medium');
+          });
+          btn.classList.add('bg-gradient-to-r', 'from-primary/30', 'to-secondary/20', 'text-secondary', 'border', 'border-secondary/30', 'shadow-[0_0_12px_rgba(76,215,246,0.15)]', 'font-semibold');
+          btn.classList.remove('text-on-surface-variant', 'font-medium');
+
+          if (locationPill) {
+            const isVirtual = btn.getAttribute('data-mode') === 'virtual';
+            locationPill.innerHTML = isVirtual 
+              ? `<div class="flex items-center gap-1.5 min-w-0">
+                  <span class="material-symbols-outlined text-secondary text-[18px]">wifi</span>
+                  <span class="font-body-sm text-body-sm text-gray-300 truncate font-mono">Anywhere &bull; Encrypted HD Stream</span>
+                 </div>
+                 <span class="font-mono text-[11px] text-secondary font-bold shrink-0 uppercase tracking-wider">1-Tap Connect</span>`
+              : `<div class="flex items-center gap-1.5 min-w-0">
+                  <span class="material-symbols-outlined text-secondary text-[18px]">near_me</span>
+                  <span class="font-body-sm text-body-sm text-gray-300 truncate font-mono">Current Location &bull; Downtown</span>
+                 </div>
+                 <button type="button" class="font-label-sm text-label-sm text-secondary hover:text-cyan-300 font-semibold shrink-0 transition-transform active:scale-95 uppercase tracking-wider">Change</button>`;
+          }
+        });
+      });
+    }
+
+    // Step carousel navigation
+    const carousel = document.getElementById('steps-carousel');
+    const btnPrev = document.getElementById('step-prev');
+    const btnNext = document.getElementById('step-next');
+
+    if (carousel && btnPrev && btnNext) {
+      btnNext.addEventListener('click', () => {
+        carousel.scrollBy({ left: 255, behavior: 'smooth' });
+      });
+      btnPrev.addEventListener('click', () => {
+        carousel.scrollBy({ left: -255, behavior: 'smooth' });
+      });
+    }
+
+    // Quick Slot Pills Selection Toggle
+    const slotPills = document.querySelectorAll('.slot-pill');
+    slotPills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        slotPills.forEach(p => {
+          p.classList.remove('bg-secondary', 'text-[#0a0e17]', 'font-bold', 'shadow-[0_0_15px_rgba(76,215,246,0.4)]');
+          p.classList.add('bg-[#0b0f1c]', 'text-gray-200');
+        });
+        pill.classList.remove('bg-[#0b0f1c]', 'text-gray-200');
+        pill.classList.add('bg-secondary', 'text-[#0a0e17]', 'font-bold', 'shadow-[0_0_15px_rgba(76,215,246,0.4)]');
+      });
+    });
+
+    // Metric counter animation
+    const counters = document.querySelectorAll('.counter');
+    let hasAnimated = false;
+
+    const animateCounters = () => {
+      if (hasAnimated) return;
+      hasAnimated = true;
+      counters.forEach(counter => {
+        const target = parseFloat(counter.getAttribute('data-target'));
+        const isDecimal = target % 1 !== 0;
+        const duration = 1200;
+        const steps = 30;
+        const stepTime = duration / steps;
+        let current = 0;
+        const increment = target / steps;
+
+        const timer = setInterval(() => {
+          current += increment;
+          if (current >= target) {
+            counter.innerText = target.toFixed(isDecimal ? 1 : 0);
+            clearInterval(timer);
+          } else {
+            counter.innerText = current.toFixed(isDecimal ? 1 : 0);
+          }
+        }, stepTime);
+      });
+    };
+
+    if ('IntersectionObserver' in window && counters.length > 0) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            animateCounters();
+            observer.disconnect();
+          }
+        });
+      }, { threshold: 0.3 });
+
+      observer.observe(counters[0]);
+    } else {
+      animateCounters();
+    }
+  })();
+</script><footer class="mt-auto px-margin py-space-md text-center"><p class="font-mono text-[11px] text-gray-500 select-none">Demo data only. No real personal or health information.</p></footer></main>
+<!-- Floating AI Quick Action Trigger -->
+<div class="fixed bottom-24 right-4 z-40 pb-safe">
+<button aria-label="AI Booking Assistant" class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-primary via-indigo-500 to-secondary text-white flex items-center justify-center animate-soft-pulse active:scale-95 transition-transform border border-white/20 shadow-[0_0_25px_rgba(76,215,246,0.4)] hover:shadow-[0_0_35px_rgba(76,215,246,0.7)]" type="button">
+<span class="material-symbols-outlined text-[26px]">smart_toy</span>
+</button>
+</div>
+<!-- Futuristic Bottom Tab Navigation -->
+<nav class="fixed bottom-0 w-full z-50 pb-safe bg-[#0d1322]/85 backdrop-blur-xl border-t border-white/[0.08] shadow-[0_-4px_30px_rgba(0,0,0,0.7)]" data-active-classes="text-secondary font-semibold"><div class="flex justify-around items-center h-16 px-space-xs"><a aria-current="page" class="flex flex-col items-center justify-center w-14 h-12 transition-all text-secondary font-semibold relative group" data-path="discover" href="#"><span class="material-symbols-outlined text-[22px] drop-shadow-[0_0_8px_rgba(76,215,246,0.5)] group-hover:scale-110 transition-transform">calendar_month</span><span class="font-mono text-[10px] mt-0.5 tracking-wider">DISCOVER</span><span class="absolute -top-1 w-6 h-0.5 rounded-full bg-secondary shadow-[0_0_8px_rgba(76,215,246,0.8)]"></span></a><a class="flex flex-col items-center justify-center w-14 h-12 text-on-surface-variant hover:text-white transition-colors group" data-path="providers" href="#"><span class="material-symbols-outlined text-[22px] group-hover:scale-110 transition-transform">medical_services</span><span class="font-mono text-[10px] mt-0.5 tracking-wider">PROVIDERS</span></a><a class="flex flex-col items-center justify-center w-14 h-12 text-on-surface-variant hover:text-secondary transition-colors group" data-path="ai-assistant" href="#"><div class="relative flex items-center justify-center"><span class="material-symbols-outlined text-[22px] group-hover:scale-110 transition-transform">smart_toy</span><span class="absolute -top-1 -right-1.5 w-2 h-2 rounded-full bg-secondary shadow-[0_0_8px_rgba(76,215,246,0.8)] ring-2 ring-[#0d1322]"></span></div><span class="font-mono text-[10px] mt-0.5 tracking-wider">AI ASSIST</span></a><a class="flex flex-col items-center justify-center w-14 h-12 text-on-surface-variant hover:text-white transition-colors group" data-path="appointments" href="#"><div class="relative flex items-center justify-center"><span class="material-symbols-outlined text-[22px] group-hover:scale-110 transition-transform">schedule</span><span class="absolute -top-1 -right-2 px-1 rounded-full bg-primary text-white font-mono text-[9px] leading-tight font-bold shadow-[0_0_8px_rgba(99,102,241,0.6)]">2</span></div><span class="font-mono text-[10px] mt-0.5 tracking-wider">BOOKINGS</span></a><a class="flex flex-col items-center justify-center w-14 h-12 text-on-surface-variant hover:text-white transition-colors group" data-path="profile" href="#"><span class="material-symbols-outlined text-[22px] group-hover:scale-110 transition-transform">account_circle</span><span class="font-mono text-[10px] mt-0.5 tracking-wider">PROFILE</span></a></div></nav></body></html>

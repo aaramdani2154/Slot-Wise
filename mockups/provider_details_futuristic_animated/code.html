@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-surface dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      "colors": {
+        "tertiary-fixed-dim": "#d0bcff",
+        "on-surface-variant": "#c7c4d7",
+        "surface-tint": "#c0c1ff",
+        "inverse-primary": "#494bd6",
+        "secondary": "#4cd7f6",
+        "on-tertiary-fixed-variant": "#5516be",
+        "surface-dim": "#0f131c",
+        "surface-bright": "#353943",
+        "primary-fixed-dim": "#c0c1ff",
+        "on-primary-fixed": "#07006c",
+        "on-tertiary-container": "#340080",
+        "on-tertiary-fixed": "#23005c",
+        "on-error": "#690005",
+        "error": "#ffb4ab",
+        "tertiary-container": "#a078ff",
+        "primary-container": "#8083ff",
+        "tertiary": "#d0bcff",
+        "outline-variant": "#464554",
+        "on-secondary-fixed": "#001f26",
+        "on-primary-fixed-variant": "#2f2ebe",
+        "on-surface": "#dfe2ef",
+        "on-secondary": "#003640",
+        "secondary-fixed": "#acedff",
+        "surface-container-highest": "#31353f",
+        "on-primary-container": "#0d0096",
+        "on-primary": "#1000a9",
+        "tertiary-fixed": "#e9ddff",
+        "outline": "#908fa0",
+        "surface-variant": "#31353f",
+        "surface-container-low": "#181b25",
+        "primary-fixed": "#e1e0ff",
+        "on-tertiary": "#3c0091",
+        "surface-container-high": "#262a34",
+        "surface": "#0f131c",
+        "on-secondary-container": "#00424e",
+        "surface-container": "#1c1f29",
+        "surface-container-lowest": "#0a0e17",
+        "inverse-on-surface": "#2c303a",
+        "secondary-container": "#03b5d3",
+        "background": "#0f131c",
+        "secondary-fixed-dim": "#4cd7f6",
+        "on-error-container": "#ffdad6",
+        "on-secondary-fixed-variant": "#004e5c",
+        "error-container": "#93000a",
+        "inverse-surface": "#dfe2ef",
+        "primary": "#c0c1ff",
+        "on-background": "#dfe2ef"
+      },
+      "borderRadius": {
+        "DEFAULT": "0.25rem",
+        "lg": "0.5rem",
+        "xl": "0.75rem",
+        "full": "9999px"
+      },
+      "spacing": {
+        "gutter-mobile": "0.75rem",
+        "space-xl": "2.5rem",
+        "gutter": "1.5rem",
+        "margin-mobile": "1rem",
+        "space-lg": "1.5rem",
+        "margin": "1rem",
+        "space-xs": "0.25rem",
+        "space-sm": "0.5rem",
+        "space-md": "1rem"
+      },
+      "fontFamily": {
+        "headline-lg": ["Plus Jakarta Sans"],
+        "headline-xl": ["Plus Jakarta Sans"],
+        "headline-md": ["Plus Jakarta Sans"],
+        "body-lg": ["Inter"],
+        "label-md": ["Inter"],
+        "headline-lg-mobile": ["Plus Jakarta Sans"],
+        "body-md": ["Inter"],
+        "micro-tech": ["JetBrains Mono"],
+        "label-sm": ["Inter"],
+        "headline-xl-mobile": ["Plus Jakarta Sans"],
+        "label-lg": ["Inter"],
+        "headline-sm": ["Plus Jakarta Sans"],
+        "body-sm": ["Inter"]
+      },
+      "fontSize": {
+        "headline-lg": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "700"}],
+        "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.03em", "fontWeight": "800"}],
+        "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+        "body-lg": ["16px", {"lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+        "headline-lg-mobile": ["26px", {"lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+        "body-md": ["14px", {"lineHeight": "22px", "letterSpacing": "-0.005em", "fontWeight": "400"}],
+        "micro-tech": ["10px", {"lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "500"}],
+        "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+        "headline-xl-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.025em", "fontWeight": "800"}],
+        "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "600"}],
+        "headline-sm": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "600"}],
+        "body-sm": ["12px", {"lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "400"}]
+      }
+    }
+  }
+}</script><style>@layer base{body{overscroll-behavior:none;}.pb-safe{padding-bottom:calc(env(safe-area-inset-bottom,0px));}.pt-safe{padding-top:calc(env(safe-area-inset-top,0px));}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+
+    /* Keyframe Animations & Particle Styles */
+    @keyframes subtleDrift {
+      0%, 100% { transform: translateY(0px) translateX(0px) scale(1); opacity: 0.35; }
+      50% { transform: translateY(-18px) translateX(12px) scale(1.12); opacity: 0.7; }
+    }
+    @keyframes subtleDriftReverse {
+      0%, 100% { transform: translateY(0px) translateX(0px) scale(1); opacity: 0.3; }
+      50% { transform: translateY(16px) translateX(-10px) scale(1.08); opacity: 0.65; }
+    }
+    @keyframes neonBreathe {
+      0%, 100% {
+        box-shadow: 0 0 16px rgba(128,131,255,0.45), 0 0 28px rgba(76,215,246,0.25);
+        transform: translateY(-2px);
+      }
+      50% {
+        box-shadow: 0 0 26px rgba(128,131,255,0.8), 0 0 42px rgba(76,215,246,0.5);
+        transform: translateY(-3px);
+      }
+    }
+    @keyframes slotPulse {
+      0%, 100% {
+        box-shadow: 0 0 18px rgba(128,131,255,0.5), 0 0 30px rgba(76,215,246,0.25);
+      }
+      50% {
+        box-shadow: 0 0 28px rgba(128,131,255,0.85), 0 0 42px rgba(76,215,246,0.5);
+      }
+    }
+    @keyframes animatedBorderGradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    @keyframes travelingShimmer {
+      0% { transform: translateX(-150%) skewX(-20deg); }
+      100% { transform: translateX(250%) skewX(-20deg); }
+    }
+    @keyframes radarWave {
+      0% { transform: scale(0.9); opacity: 0.85; }
+      70% { transform: scale(2.1); opacity: 0; }
+      100% { transform: scale(2.2); opacity: 0; }
+    }
+    @keyframes iconTwinkle {
+      0%, 100% { transform: scale(1) rotate(0deg); filter: drop-shadow(0 0 4px rgba(76,215,246,0.6)); }
+      50% { transform: scale(1.15) rotate(6deg); filter: drop-shadow(0 0 12px rgba(76,215,246,1)); }
+    }
+
+    /* Classes */
+    .particle-drift-1 { animation: subtleDrift 8s ease-in-out infinite; }
+    .particle-drift-2 { animation: subtleDriftReverse 10s ease-in-out infinite; }
+    .particle-drift-3 { animation: subtleDrift 12s ease-in-out infinite 2s; }
+    
+    .date-chip-active-glow {
+      animation: neonBreathe 3s ease-in-out infinite;
+    }
+    .slot-btn-active-glow {
+      animation: slotPulse 2.8s ease-in-out infinite;
+    }
+    .animated-border-bg {
+      background-size: 250% 250%;
+      animation: animatedBorderGradient 4s ease infinite;
+    }
+    .sparkle-icon {
+      animation: iconTwinkle 2.4s ease-in-out infinite;
+    }
+    .radar-ring {
+      animation: radarWave 2.2s cubic-bezier(0.2, 0.6, 0.4, 1) infinite;
+    }
+    .radar-ring-delay {
+      animation: radarWave 2.2s cubic-bezier(0.2, 0.6, 0.4, 1) infinite 1.1s;
+    }
+    .traveling-light {
+      animation: travelingShimmer 2.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    }
+
+    /* Micro-interactions */
+    .slot-interactive {
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .slot-interactive:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(76, 215, 246, 0.25);
+    }
+    .slot-interactive:active:not(:disabled) {
+      transform: scale(0.96);
+    }
+    .date-chip-interactive {
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .date-chip-interactive:hover:not(.active) {
+      transform: translateY(-2px);
+      box-shadow: 0 0 14px rgba(76,215,246,0.25);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .particle-drift-1, .particle-drift-2, .particle-drift-3,
+      .date-chip-active-glow, .slot-btn-active-glow,
+      .animated-border-bg, .sparkle-icon, .radar-ring,
+      .radar-ring-delay, .traveling-light {
+        animation: none !important;
+      }
+      .slot-interactive:hover:not(:disabled),
+      .date-chip-interactive:hover:not(.active) {
+        transform: none !important;
+      }
+    }
+  </style>
+</head><body class="bg-surface text-on-surface font-body-md text-body-md flex flex-col min-h-screen relative antialiased selection:bg-primary-container selection:text-white overflow-x-hidden">
+<!-- Floating Glowing Particle Canvas & Cyber Constellation Background -->
+<div aria-hidden="true" class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+<canvas class="w-full h-full opacity-60" id="constellation-canvas"></canvas>
+<!-- Ambient Luminous Neon Blur Spheres -->
+<div class="particle-drift-1 absolute top-[12%] -left-12 w-64 h-64 rounded-full bg-primary-container/15 blur-[72px]"></div>
+<div class="particle-drift-2 absolute top-[45%] -right-16 w-72 h-72 rounded-full bg-secondary/15 blur-[80px]"></div>
+<div class="particle-drift-3 absolute bottom-[18%] left-10 w-60 h-60 rounded-full bg-tertiary-container/15 blur-[75px]"></div>
+<div class="particle-drift-1 absolute top-[28%] right-12 w-32 h-32 rounded-full bg-secondary-container/10 blur-[50px]"></div>
+</div>
+<header class="fixed top-0 w-full z-50 pt-safe bg-surface-container-lowest/80 backdrop-blur-2xl border-b border-outline-variant/30 shadow-[0_4px_24px_rgba(0,0,0,0.4)]"><div class="h-16 px-margin flex items-center justify-between gap-space-xs"><div class="flex items-center gap-2"><button aria-label="Go back" class="w-10 h-10 -ml-1 flex items-center justify-center rounded-xl text-on-surface hover:bg-surface-container-high/60 active:scale-95 border border-outline-variant/30 transition-all bg-surface-container-low/50" onclick="history.back()" type="button"><span class="material-symbols-outlined text-[20px] text-primary">arrow_back</span></button><img alt="SlotWise Logo" class="h-6 w-auto object-contain brightness-125 contrast-125" src="https://lh3.googleusercontent.com/aida/ALJJyrDGgae7CbIx5jGi59veDxiDB4sGIatelfzKOeSUg_xYUi6Ia_qwEMmZqEQMuDxErijYUtV5nGMUwfhcQ3DO0I7aC2UDjkfoucSvOv3wKM_FVGQj36wK8GMyjx7uxXZLzotOEDoo9az9x3pnA8T0J2mtzpm2AZzXhOVdmZ_VFETawp-uUPDsKXv-dENI9t9G_fRAI4gNUmCGw9MdGjAbTE5lJs3pLZDLww8fKEQZMjo"/><h1 class="font-headline-sm text-headline-sm font-semibold text-on-surface truncate tracking-tight">Provider Details</h1></div><div class="flex items-center gap-space-xs"><button aria-label="Notifications" class="w-10 h-10 flex items-center justify-center rounded-xl text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high/70 border border-outline-variant/30 transition-colors bg-surface-container-low/50" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span></button><div class="w-10 h-10 flex items-center justify-center"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-2 ring-primary/40 shadow-[0_0_12px_rgba(128,131,255,0.3)]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuY0Ce_R5dzMZxLQf_Zkz1HLIaR_cPZKERW93_jLCV5QQVyOuQDCjFBtddKEmaDMGtHRvxsEUNcD0xHsn6vr1FnJZzHRuaElLybBoryj4VKpRwoNpemb69oLPx1Jyo-6g4uTgg5v0vY1JIfyT6CUUkQWknyN0L6_KT6xV4bh-jzjttQMkaZMZP2SWCGU2uWVuLhaesYcREfisPitX3VTmXjdXQJ8fATmCoEBfrN6M"/></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-safe bg-surface/80 z-10"><div class="flex flex-col w-full pb-36">
+<!-- Provider Profile Hero Card -->
+<section class="px-margin pt-space-sm">
+<div class="bg-surface-container-low/80 backdrop-blur-xl border border-outline-variant/35 p-space-md rounded-2xl shadow-[0_8px_32px_rgba(0,0,0,0.5)] relative overflow-hidden">
+<!-- Ambient Cyber Neon Tint Overlays -->
+<div class="absolute -right-16 -top-16 w-44 h-44 rounded-full bg-primary-container/20 blur-3xl pointer-events-none"></div>
+<div class="absolute -left-12 -bottom-12 w-36 h-36 rounded-full bg-secondary/15 blur-2xl pointer-events-none"></div>
+<div class="flex items-start gap-space-md relative z-10">
+<div class="relative shrink-0">
+<img class="w-20 h-20 rounded-2xl object-cover ring-2 ring-primary/40 shadow-[0_0_20px_rgba(128,131,255,0.3)]" data-alt="A warm, professional portrait photo of Dr. Aarav Mehta, an Indian male physician in his late 30s wearing a modern navy stethoscope and crisp white lab coat with friendly approachable smile. Studio soft lighting, clean slate and indigo-tinted blurred clinic background, high-end medical editorial photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDg7c10i3qLcso6l1OHSG3ZCFxiJFTMLDotGgH39tGcfzs34NSkonLUGPpn_HmKK7a4O9XcNc5IsUTO1GNpd6fJE56Npgvz-zVwWnXivyADcvf6w-b2NnbxCexGBrOyJZRKxye8Y0-5HFZ6yhrk1WICSApoQAEuXERWQmavMr4mtHdXDdER3qROb_twC85tx5sxAc6SFw7a4yZa-U9jXhc8SEwjJgjo3i4Ae3zJcUE"/>
+<span class="absolute -bottom-1.5 -right-1.5 w-6 h-6 rounded-lg bg-gradient-to-tr from-secondary-container to-secondary text-surface-container-lowest flex items-center justify-center shadow-[0_0_12px_rgba(76,215,246,0.6)]" title="Verified Practitioner">
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-1.5 flex-wrap">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold tracking-tight truncate">Dr. Aarav Mehta, MD</h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">General Physician &amp; Preventative Care</p>
+<div class="flex items-center gap-2 mt-2.5 flex-wrap">
+<div class="inline-flex items-center gap-1 bg-surface-container-high/70 border border-outline-variant/40 px-2 py-0.5 rounded-lg shadow-sm">
+<span class="material-symbols-outlined text-[15px] text-amber-400" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">4.9</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">(142)</span>
+</div>
+<div class="inline-flex items-center gap-1 bg-surface-container-high/50 border border-outline-variant/30 px-2 py-0.5 rounded-lg">
+<span class="material-symbols-outlined text-[14px] text-secondary">schedule</span>
+<span class="font-label-sm text-label-sm font-medium text-on-surface">20 min</span>
+</div>
+<div class="inline-flex items-center gap-0.5 bg-secondary-container/20 border border-secondary/40 text-secondary px-2.5 py-0.5 rounded-lg shadow-[0_0_10px_rgba(76,215,246,0.2)]">
+<span class="font-label-sm text-label-sm font-bold text-secondary">$45</span>
+<span class="font-label-sm text-label-sm text-secondary/70">visit</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Bio & Credentials Accordion -->
+<div class="mt-space-md bg-surface-container-lowest/60 border border-outline-variant/30 rounded-xl p-space-sm backdrop-blur-md">
+<button aria-expanded="false" class="w-full flex items-center justify-between text-left group" id="bio-toggle" onclick="toggleBio()" type="button">
+<span class="font-label-md text-label-md font-semibold text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-secondary">school</span>
+            Bio &amp; Board Certifications
+          </span>
+<span class="material-symbols-outlined text-on-surface-variant text-[20px] transition-transform duration-200 group-hover:text-primary" id="bio-chevron">expand_more</span>
+</button>
+<div class="hidden mt-2 pt-2 border-t border-outline-variant/20" id="bio-content">
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Board-certified in Internal Medicine with 11+ years of experience across acute primary care, preventative lifestyle medicine, and cardiometabolic wellness. Alumnus of Johns Hopkins Medicine and active advisor for clinical digital health workflows.
+          </p>
+<div class="mt-2.5 flex items-center gap-2 flex-wrap">
+<span class="font-micro-tech text-micro-tech bg-surface-container-high/80 border border-outline-variant/40 px-2 py-0.5 rounded text-secondary-fixed">ABIM Certified</span>
+<span class="font-micro-tech text-micro-tech bg-surface-container-high/80 border border-outline-variant/40 px-2 py-0.5 rounded text-primary-fixed">Telehealth Accredited</span>
+<span class="font-micro-tech text-micro-tech bg-surface-container-high/80 border border-outline-variant/40 px-2 py-0.5 rounded text-on-surface-variant">English, Hindi</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Service Selector Chips -->
+<section class="mt-space-md px-margin">
+<div class="flex items-center justify-between mb-2">
+<h3 class="font-label-lg text-label-lg font-semibold text-on-surface tracking-tight">Select Consultation Type</h3>
+<span class="font-micro-tech text-micro-tech uppercase tracking-wider text-outline">Standard fees apply</span>
+</div>
+<div class="flex gap-2 overflow-x-auto pb-1 no-scrollbar -mx-margin px-margin">
+<button class="service-chip active shrink-0 px-3.5 py-2 rounded-xl bg-gradient-to-r from-primary-container to-inverse-primary text-white font-label-md text-label-md font-medium flex items-center gap-1.5 shadow-[0_0_16px_rgba(128,131,255,0.45)] border border-primary/50 transition-all hover:scale-[1.02] active:scale-95" type="button">
+<span class="material-symbols-outlined text-[16px] text-secondary">stethoscope</span>
+<span>Routine Health Checkup</span>
+<span class="font-label-sm text-label-sm opacity-80">(20m)</span>
+</button>
+<button class="service-chip shrink-0 px-3.5 py-2 rounded-xl bg-surface-container-low/70 border border-outline-variant/35 text-on-surface-variant hover:bg-surface-container-high/80 hover:text-on-surface hover:border-secondary/40 font-label-md text-label-md flex items-center gap-1.5 transition-all backdrop-blur-md active:scale-95" type="button">
+<span class="material-symbols-outlined text-[16px] text-outline">pill</span>
+<span>Prescription Renewal</span>
+<span class="font-label-sm text-label-sm opacity-60">(15m)</span>
+</button>
+<button class="service-chip shrink-0 px-3.5 py-2 rounded-xl bg-surface-container-low/70 border border-outline-variant/35 text-on-surface-variant hover:bg-surface-container-high/80 hover:text-on-surface hover:border-secondary/40 font-label-md text-label-md flex items-center gap-1.5 transition-all backdrop-blur-md active:scale-95" type="button">
+<span class="material-symbols-outlined text-[16px] text-outline">biotech</span>
+<span>Lab Results Review</span>
+<span class="font-label-sm text-label-sm opacity-60">(20m)</span>
+</button>
+</div>
+</section>
+<!-- Horizontal Date Strip -->
+<section class="mt-space-md px-margin">
+<div class="flex items-center justify-between mb-2.5">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[20px] text-secondary">calendar_month</span>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface tracking-tight">October 2024</h3>
+</div>
+<span class="font-micro-tech text-micro-tech uppercase tracking-widest bg-primary-container/20 border border-primary/30 text-primary-fixed font-semibold px-2.5 py-1 rounded-full">Next 7 Days</span>
+</div>
+<div class="flex gap-2.5 overflow-x-auto pb-1 no-scrollbar -mx-margin px-margin">
+<!-- Mon 14 -->
+<button class="date-chip date-chip-interactive shrink-0 w-[60px] py-2.5 rounded-xl bg-surface-container-low/70 border border-outline-variant/30 text-center flex flex-col items-center justify-center transition-all hover:border-secondary/50 active:scale-95 backdrop-blur-md relative overflow-hidden" type="button">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Mon</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface mt-0.5">14</span>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary mt-1.5 shadow-[0_0_6px_rgba(76,215,246,0.8)]"></span>
+</button>
+<!-- Tue 15 (Selected) -->
+<button class="date-chip active date-chip-active-glow shrink-0 w-[60px] py-2.5 rounded-xl bg-gradient-to-b from-primary-container to-inverse-primary border border-primary text-white text-center flex flex-col items-center justify-center -translate-y-0.5 relative overflow-hidden" type="button">
+<span class="font-label-sm text-label-sm text-primary-fixed font-medium">Tue</span>
+<span class="font-headline-sm text-headline-sm font-bold text-white mt-0.5">15</span>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary mt-1.5 shadow-[0_0_8px_rgba(76,215,246,1)]"></span>
+</button>
+<!-- Wed 16 -->
+<button class="date-chip date-chip-interactive shrink-0 w-[60px] py-2.5 rounded-xl bg-surface-container-low/70 border border-outline-variant/30 text-center flex flex-col items-center justify-center transition-all hover:border-secondary/50 active:scale-95 backdrop-blur-md relative overflow-hidden" type="button">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Wed</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface mt-0.5">16</span>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary mt-1.5 shadow-[0_0_6px_rgba(76,215,246,0.8)]"></span>
+</button>
+<!-- Thu 17 -->
+<button class="date-chip date-chip-interactive shrink-0 w-[60px] py-2.5 rounded-xl bg-surface-container-low/70 border border-outline-variant/30 text-center flex flex-col items-center justify-center transition-all hover:border-secondary/50 active:scale-95 backdrop-blur-md relative overflow-hidden" type="button">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Thu</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface mt-0.5">17</span>
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant mt-1.5"></span>
+</button>
+<!-- Fri 18 -->
+<button class="date-chip date-chip-interactive shrink-0 w-[60px] py-2.5 rounded-xl bg-surface-container-low/70 border border-outline-variant/30 text-center flex flex-col items-center justify-center transition-all hover:border-secondary/50 active:scale-95 backdrop-blur-md relative overflow-hidden" type="button">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Fri</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface mt-0.5">18</span>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary mt-1.5 shadow-[0_0_6px_rgba(76,215,246,0.8)]"></span>
+</button>
+<!-- Sat 19 -->
+<button class="date-chip shrink-0 w-[60px] py-2.5 rounded-xl bg-surface-container-lowest/60 border border-outline-variant/20 text-center flex flex-col items-center justify-center opacity-40 cursor-not-allowed" type="button">
+<span class="font-label-sm text-label-sm text-outline">Sat</span>
+<span class="font-headline-sm text-headline-sm font-semibold text-outline mt-0.5">19</span>
+<span class="w-1.5 h-1.5 rounded-full bg-transparent mt-1.5"></span>
+</button>
+</div>
+</section>
+<!-- Smart AI Suggested Slot Banner (Holographic Neon AI Notification with Running Shimmer Border) -->
+<section class="mt-space-md px-margin">
+<div class="relative overflow-hidden rounded-2xl p-[1.5px] animated-border-bg bg-gradient-to-r from-primary via-secondary to-tertiary-container shadow-[0_0_24px_rgba(76,215,246,0.3)]">
+<div class="relative rounded-[15px] bg-surface-container-low/90 backdrop-blur-xl p-space-sm flex items-start justify-between gap-space-sm">
+<!-- Ambient Neon Glow inside -->
+<div class="absolute -right-8 -top-8 w-28 h-28 rounded-full bg-secondary/20 blur-xl pointer-events-none"></div>
+<div class="flex items-start gap-2.5 min-w-0 relative z-10">
+<div class="w-9 h-9 rounded-xl bg-gradient-to-br from-primary-container to-inverse-primary text-white flex items-center justify-center shrink-0 shadow-[0_0_12px_rgba(128,131,255,0.6)]">
+<span class="material-symbols-outlined text-[19px] sparkle-icon text-white">auto_awesome</span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-micro-tech text-micro-tech font-bold uppercase tracking-wider text-secondary">Smart AI Match</span>
+<span class="inline-block w-2 h-2 rounded-full bg-secondary animate-pulse shadow-[0_0_8px_rgba(76,215,246,0.8)]"></span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface font-medium mt-0.5 leading-snug">
+              Today <span class="font-bold text-secondary-fixed-dim">3:30 PM</span> aligns best with your preferred afternoon routine
+            </p>
+</div>
+</div>
+<button class="relative z-10 shrink-0 px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-secondary-container to-secondary text-surface-container-lowest font-label-md text-label-md font-bold shadow-[0_0_14px_rgba(76,215,246,0.4)] hover:brightness-110 active:scale-95 transition-all" onclick="selectSlot('03:30 PM', event)" type="button">
+          Select
+        </button>
+</div>
+</div>
+</section>
+<!-- Time Slot Groups -->
+<section class="mt-space-lg px-margin space-y-space-md">
+<!-- Morning Section -->
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-md text-label-md font-semibold text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-amber-400">wb_twilight</span>
+          Morning Slots
+        </span>
+<span class="font-micro-tech text-micro-tech uppercase tracking-wider text-on-surface-variant">2 available</span>
+</div>
+<div class="grid grid-cols-3 gap-2">
+<!-- 09:30 AM (Available) -->
+<button class="slot-btn slot-interactive h-12 rounded-xl bg-surface-container-low/70 border border-outline-variant/40 text-on-surface font-label-md text-label-md font-medium shadow-sm hover:border-secondary/60 hover:text-white transition-all flex items-center justify-center backdrop-blur-md relative overflow-hidden" data-time="09:30 AM" onclick="selectSlot('09:30 AM', event)" type="button">
+          09:30 AM
+        </button>
+<!-- 10:15 AM (Booked, Greyed out) -->
+<button class="h-12 rounded-xl bg-surface-container-lowest/50 border border-outline-variant/15 text-outline/50 cursor-not-allowed font-label-md text-label-md flex items-center justify-center relative select-none" disabled="" type="button">
+<span class="line-through decoration-outline/50">10:15 AM</span>
+<span class="absolute bottom-1 font-micro-tech text-[8px] uppercase tracking-widest text-outline/40">Booked</span>
+</button>
+<!-- 11:00 AM (Available) -->
+<button class="slot-btn slot-interactive h-12 rounded-xl bg-surface-container-low/70 border border-outline-variant/40 text-on-surface font-label-md text-label-md font-medium shadow-sm hover:border-secondary/60 hover:text-white transition-all flex items-center justify-center backdrop-blur-md relative overflow-hidden" data-time="11:00 AM" onclick="selectSlot('11:00 AM', event)" type="button">
+          11:00 AM
+        </button>
+</div>
+</div>
+<!-- Afternoon Section -->
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-md text-label-md font-semibold text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-secondary">light_mode</span>
+          Afternoon Slots
+        </span>
+<span class="font-micro-tech text-micro-tech uppercase tracking-wider text-secondary font-medium" id="afternoon-status-tag">Selected: 3:30 PM</span>
+</div>
+<div class="grid grid-cols-3 gap-2">
+<!-- 02:00 PM (Available) -->
+<button class="slot-btn slot-interactive h-12 rounded-xl bg-surface-container-low/70 border border-outline-variant/40 text-on-surface font-label-md text-label-md font-medium shadow-sm hover:border-secondary/60 hover:text-white transition-all flex items-center justify-center backdrop-blur-md relative overflow-hidden" data-time="02:00 PM" onclick="selectSlot('02:00 PM', event)" type="button">
+          02:00 PM
+        </button>
+<!-- 03:30 PM (Selected State: Indigo/cyan glow aura + cyber checkmark) -->
+<button class="slot-btn active slot-btn-active-glow h-12 rounded-xl bg-gradient-to-r from-primary-container to-inverse-primary border border-primary text-white font-label-md text-label-md font-bold transition-all flex items-center justify-center gap-1 scale-[1.02] relative overflow-hidden" data-time="03:30 PM" onclick="selectSlot('03:30 PM', event)" type="button">
+<span class="material-symbols-outlined text-[16px] text-secondary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span>03:30 PM</span>
+</button>
+<!-- 04:15 PM (Booked, Greyed out) -->
+<button class="h-12 rounded-xl bg-surface-container-lowest/50 border border-outline-variant/15 text-outline/50 cursor-not-allowed font-label-md text-label-md flex items-center justify-center relative select-none" disabled="" type="button">
+<span class="line-through decoration-outline/50">04:15 PM</span>
+<span class="absolute bottom-1 font-micro-tech text-[8px] uppercase tracking-widest text-outline/40">Booked</span>
+</button>
+</div>
+</div>
+<!-- Evening Section -->
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-md text-label-md font-semibold text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-primary">dark_mode</span>
+          Evening Slots
+        </span>
+<span class="font-micro-tech text-micro-tech uppercase tracking-wider text-on-surface-variant">2 available</span>
+</div>
+<div class="grid grid-cols-3 gap-2">
+<!-- 05:30 PM (Available) -->
+<button class="slot-btn slot-interactive h-12 rounded-xl bg-surface-container-low/70 border border-outline-variant/40 text-on-surface font-label-md text-label-md font-medium shadow-sm hover:border-secondary/60 hover:text-white transition-all flex items-center justify-center backdrop-blur-md relative overflow-hidden" data-time="05:30 PM" onclick="selectSlot('05:30 PM', event)" type="button">
+          05:30 PM
+        </button>
+<!-- 06:15 PM (Available) -->
+<button class="slot-btn slot-interactive h-12 rounded-xl bg-surface-container-low/70 border border-outline-variant/40 text-on-surface font-label-md text-label-md font-medium shadow-sm hover:border-secondary/60 hover:text-white transition-all flex items-center justify-center backdrop-blur-md relative overflow-hidden" data-time="06:15 PM" onclick="selectSlot('06:15 PM', event)" type="button">
+          06:15 PM
+        </button>
+<!-- Spacer / Empty Cell -->
+<div class="h-12 rounded-xl bg-surface-container-lowest/40 border border-outline-variant/20 flex items-center justify-center">
+<span class="font-micro-tech text-[10px] uppercase tracking-wider text-outline/50">No more</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Clinic Care Guarantee Callout with Sonar Radar Wave Animation -->
+<section class="mt-space-lg px-margin">
+<div class="p-space-sm rounded-2xl bg-surface-container-low/70 border border-secondary/30 shadow-[0_0_16px_rgba(76,215,246,0.1)] flex items-center gap-space-sm backdrop-blur-md relative overflow-hidden">
+<div class="relative w-10 h-10 shrink-0 flex items-center justify-center">
+<!-- Gentle Radar Sonar Waves -->
+<span class="radar-ring absolute inset-0 rounded-xl border border-secondary/60 pointer-events-none"></span>
+<span class="radar-ring-delay absolute inset-0 rounded-xl border border-primary/50 pointer-events-none"></span>
+<div class="w-10 h-10 rounded-xl bg-secondary/15 border border-secondary/40 text-secondary flex items-center justify-center shrink-0 shadow-[0_0_12px_rgba(76,215,246,0.3)] relative z-10">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">security</span>
+</div>
+</div>
+<div class="min-w-0">
+<p class="font-label-md text-label-md font-semibold text-on-surface">Zero-Wait Guarantee</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">SlotWise AI re-confirms real-time doctor availability 15m prior.</p>
+</div>
+</div>
+</section>
+<!-- Sticky Bottom Booking Summary Sheet -->
+<aside class="fixed bottom-0 left-0 right-0 z-40 bg-surface-container-lowest/90 backdrop-blur-2xl border-t border-outline-variant/35 shadow-[0_-12px_32px_rgba(0,0,0,0.6)] px-margin pt-space-sm pb-6">
+<div class="max-w-md mx-auto flex flex-col gap-2.5">
+<div class="flex items-center justify-between">
+<div>
+<span class="font-micro-tech text-micro-tech uppercase tracking-widest text-outline block">Selected Appointment</span>
+<p class="font-label-lg text-label-lg font-semibold text-on-surface flex items-center gap-1.5 mt-0.5" id="summary-slot-display">
+<span class="material-symbols-outlined text-[16px] text-secondary">event_available</span>
+            Tue, Oct 15 • 03:30 PM (20 mins)
+          </p>
+</div>
+<div class="text-right">
+<span class="font-micro-tech text-micro-tech uppercase tracking-widest text-outline block">Total Fee</span>
+<span class="font-headline-sm text-headline-sm font-bold text-secondary drop-shadow-[0_0_8px_rgba(76,215,246,0.4)]">$45.00</span>
+</div>
+</div>
+<!-- Action Button with Energetic Traveling Light Shimmer & Feedback Ripple -->
+<button class="w-full h-12 rounded-xl bg-gradient-to-r from-primary-container via-inverse-primary to-secondary text-white font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 shadow-[0_0_24px_rgba(128,131,255,0.45)] hover:shadow-[0_0_30px_rgba(76,215,246,0.6)] active:scale-[0.98] transition-all relative overflow-hidden border border-white/25 group" id="confirm-booking-btn" onclick="triggerConfirmationEffect(event)" type="button">
+<!-- Traveling Shimmer Line -->
+<span class="traveling-light absolute inset-y-0 w-24 bg-gradient-to-r from-transparent via-white/35 to-transparent pointer-events-none"></span>
+<span class="relative z-10 transition-transform group-hover:translate-x-0.5">Continue to Confirmation</span>
+<span class="material-symbols-outlined text-[18px] relative z-10 transition-transform group-hover:translate-x-1">arrow_forward</span>
+</button>
+</div>
+</aside>
+</div>
+<script>
+  // Subtle Floating Constellation Particles
+  (function initCanvasParticles() {
+    const canvas = document.getElementById('constellation-canvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    let width, height;
+    let particles = [];
+    const particleCount = 28;
+
+    function resize() {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resize);
+    resize();
+
+    class Particle {
+      constructor() {
+        this.reset();
+      }
+      reset() {
+        this.x = Math.random() * width;
+        this.y = Math.random() * height;
+        this.size = Math.random() * 1.8 + 0.8;
+        this.vx = (Math.random() - 0.5) * 0.35;
+        this.vy = (Math.random() - 0.5) * 0.35;
+        this.alpha = Math.random() * 0.5 + 0.2;
+        this.color = Math.random() > 0.5 ? '76, 215, 246' : '192, 193, 255';
+      }
+      update() {
+        this.x += this.vx;
+        this.y += this.vy;
+        if (this.x < 0 || this.x > width || this.y < 0 || this.y > height) {
+          this.reset();
+        }
+      }
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(${this.color}, ${this.alpha})`;
+        ctx.shadowBlur = 8;
+        ctx.shadowColor = `rgba(${this.color}, 0.8)`;
+        ctx.fill();
+        ctx.shadowBlur = 0;
+      }
+    }
+
+    for (let i = 0; i < particleCount; i++) {
+      particles.push(new Particle());
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, width, height);
+
+      // Connect near particles with ultra-soft cyber lines
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 85) {
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.strokeStyle = `rgba(128, 131, 255, ${0.12 * (1 - dist / 85)})`;
+            ctx.lineWidth = 0.75;
+            ctx.stroke();
+          }
+        }
+      }
+
+      particles.forEach(p => {
+        p.update();
+        p.draw();
+      });
+
+      requestAnimationFrame(animate);
+    }
+
+    // Only animate if motion is allowed
+    const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if (!motionQuery.matches) {
+      animate();
+    }
+  })();
+
+  function toggleBio() {
+    const content = document.getElementById('bio-content');
+    const chevron = document.getElementById('bio-chevron');
+    const button = document.getElementById('bio-toggle');
+    const isExpanded = button.getAttribute('aria-expanded') === 'true';
+
+    if (isExpanded) {
+      content.classList.add('hidden');
+      chevron.classList.remove('rotate-180');
+      button.setAttribute('aria-expanded', 'false');
+    } else {
+      content.classList.remove('hidden');
+      chevron.classList.add('rotate-180');
+      button.setAttribute('aria-expanded', 'true');
+    }
+  }
+
+  function createInteractiveRipple(e, targetEl) {
+    if (!targetEl) return;
+    const circle = document.createElement('span');
+    const diameter = Math.max(targetEl.clientWidth, targetEl.clientHeight);
+    const radius = diameter / 2;
+
+    const rect = targetEl.getBoundingClientRect();
+    const x = e ? (e.clientX - rect.left - radius) : (rect.width / 2 - radius);
+    const y = e ? (e.clientY - rect.top - radius) : (rect.height / 2 - radius);
+
+    circle.style.width = circle.style.height = `${diameter}px`;
+    circle.style.left = `${x}px`;
+    circle.style.top = `${y}px`;
+    circle.className = 'absolute rounded-full bg-secondary/35 pointer-events-none animate-ping';
+    
+    const existing = targetEl.querySelector('.animate-ping');
+    if (existing) existing.remove();
+
+    targetEl.appendChild(circle);
+    setTimeout(() => circle.remove(), 600);
+  }
+
+  function selectSlot(timeStr, event) {
+    const buttons = document.querySelectorAll('.slot-btn');
+    buttons.forEach(btn => {
+      if (btn.getAttribute('data-time') === timeStr) {
+        btn.className = "slot-btn active slot-btn-active-glow h-12 rounded-xl bg-gradient-to-r from-primary-container to-inverse-primary border border-primary text-white font-label-md text-label-md font-bold transition-all flex items-center justify-center gap-1 scale-[1.02] relative overflow-hidden";
+        btn.innerHTML = `<span class="material-symbols-outlined text-[16px] text-secondary" style="font-variation-settings: 'FILL' 1;">check_circle</span><span>${timeStr}</span>`;
+        if (event) createInteractiveRipple(event, btn);
+      } else {
+        btn.className = "slot-btn slot-interactive h-12 rounded-xl bg-surface-container-low/70 border border-outline-variant/40 text-on-surface font-label-md text-label-md font-medium shadow-sm hover:border-secondary/60 hover:text-white transition-all flex items-center justify-center backdrop-blur-md relative overflow-hidden";
+        btn.innerHTML = btn.getAttribute('data-time');
+      }
+    });
+
+    const statusTag = document.getElementById('afternoon-status-tag');
+    if (statusTag) {
+      statusTag.innerText = `Selected: ${timeStr.replace(/^0/, '')}`;
+    }
+
+    const summaryText = document.getElementById('summary-slot-display');
+    if (summaryText) {
+      summaryText.innerHTML = `<span class="material-symbols-outlined text-[16px] text-secondary">event_available</span> Tue, Oct 15 • ${timeStr} (20 mins)`;
+    }
+  }
+
+  // Consultation Type Chip Toggle with micro-tap
+  document.querySelectorAll('.service-chip').forEach(chip => {
+    chip.addEventListener('click', function(e) {
+      document.querySelectorAll('.service-chip').forEach(c => {
+        c.className = "service-chip shrink-0 px-3.5 py-2 rounded-xl bg-surface-container-low/70 border border-outline-variant/35 text-on-surface-variant hover:bg-surface-container-high/80 hover:text-on-surface hover:border-secondary/40 font-label-md text-label-md flex items-center gap-1.5 transition-all backdrop-blur-md active:scale-95";
+        const icon = c.querySelector('.material-symbols-outlined');
+        if (icon) icon.className = "material-symbols-outlined text-[16px] text-outline";
+      });
+      this.className = "service-chip active shrink-0 px-3.5 py-2 rounded-xl bg-gradient-to-r from-primary-container to-inverse-primary text-white font-label-md text-label-md font-medium flex items-center gap-1.5 shadow-[0_0_16px_rgba(128,131,255,0.45)] border border-primary/50 transition-all hover:scale-[1.02] active:scale-95";
+      const activeIcon = this.querySelector('.material-symbols-outlined');
+      if (activeIcon) activeIcon.className = "material-symbols-outlined text-[16px] text-secondary";
+      createInteractiveRipple(e, this);
+    });
+  });
+
+  // Date Chip Selection with Breathing Halo Aura
+  document.querySelectorAll('.date-chip').forEach(chip => {
+    chip.addEventListener('click', function(e) {
+      if (this.disabled || this.classList.contains('cursor-not-allowed')) return;
+      document.querySelectorAll('.date-chip').forEach(c => {
+        c.className = "date-chip date-chip-interactive shrink-0 w-[60px] py-2.5 rounded-xl bg-surface-container-low/70 border border-outline-variant/30 text-center flex flex-col items-center justify-center transition-all hover:border-secondary/50 active:scale-95 backdrop-blur-md relative overflow-hidden";
+        const sub = c.querySelector('span:first-child');
+        const num = c.querySelector('span:nth-child(2)');
+        if (sub) sub.className = "font-label-sm text-label-sm text-on-surface-variant";
+        if (num) num.className = "font-headline-sm text-headline-sm font-bold text-on-surface mt-0.5";
+      });
+
+      this.className = "date-chip active date-chip-active-glow shrink-0 w-[60px] py-2.5 rounded-xl bg-gradient-to-b from-primary-container to-inverse-primary border border-primary text-white text-center flex flex-col items-center justify-center -translate-y-0.5 relative overflow-hidden";
+      const sub = this.querySelector('span:first-child');
+      const num = this.querySelector('span:nth-child(2)');
+      if (sub) sub.className = "font-label-sm text-label-sm text-primary-fixed font-medium";
+      if (num) num.className = "font-headline-sm text-headline-sm font-bold text-white mt-0.5";
+      createInteractiveRipple(e, this);
+    });
+  });
+
+  // Ripple press visual on Continue button
+  function triggerConfirmationEffect(e) {
+    createInteractiveRipple(e, e.currentTarget);
+  }
+</script><footer class="mt-auto px-margin py-space-md text-center"><p class="font-micro-tech text-micro-tech uppercase tracking-wider text-outline/60 select-none">Demo data only. No real personal or health information.</p></footer></main></body></html>

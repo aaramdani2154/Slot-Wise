@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-surface dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "tertiary-fixed-dim": "#d0bcff",
+          "on-surface-variant": "#c7c4d7",
+          "surface-tint": "#c0c1ff",
+          "inverse-primary": "#494bd6",
+          "secondary": "#4cd7f6",
+          "on-tertiary-fixed-variant": "#5516be",
+          "surface-dim": "#0f131c",
+          "surface-bright": "#353943",
+          "primary-fixed-dim": "#c0c1ff",
+          "on-primary-fixed": "#07006c",
+          "on-tertiary-container": "#340080",
+          "on-tertiary-fixed": "#23005c",
+          "on-error": "#690005",
+          "error": "#ffb4ab",
+          "tertiary-container": "#a078ff",
+          "primary-container": "#8083ff",
+          "tertiary": "#d0bcff",
+          "outline-variant": "#464554",
+          "on-secondary-fixed": "#001f26",
+          "on-primary-fixed-variant": "#2f2ebe",
+          "on-surface": "#dfe2ef",
+          "on-secondary": "#003640",
+          "secondary-fixed": "#acedff",
+          "surface-container-highest": "#31353f",
+          "on-primary-container": "#0d0096",
+          "on-primary": "#1000a9",
+          "tertiary-fixed": "#e9ddff",
+          "outline": "#908fa0",
+          "surface-variant": "#31353f",
+          "surface-container-low": "#181b25",
+          "primary-fixed": "#e1e0ff",
+          "on-tertiary": "#3c0091",
+          "surface-container-high": "#262a34",
+          "surface": "#0f131c",
+          "on-secondary-container": "#00424e",
+          "surface-container": "#1c1f29",
+          "surface-container-lowest": "#0a0e17",
+          "inverse-on-surface": "#2c303a",
+          "secondary-container": "#03b5d3",
+          "background": "#0f131c",
+          "secondary-fixed-dim": "#4cd7f6",
+          "on-error-container": "#ffdad6",
+          "on-secondary-fixed-variant": "#004e5c",
+          "error-container": "#93000a",
+          "inverse-surface": "#dfe2ef",
+          "primary": "#c0c1ff",
+          "on-background": "#dfe2ef"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "gutter-mobile": "0.75rem",
+          "space-xl": "2.5rem",
+          "gutter": "1.5rem",
+          "margin-mobile": "1rem",
+          "space-lg": "1.5rem",
+          "margin": "1rem",
+          "space-xs": "0.5rem",
+          "space-sm": "0.75rem",
+          "space-md": "1rem"
+        },
+        "fontFamily": {
+          "headline-lg": ["Plus Jakarta Sans"],
+          "headline-xl": ["Plus Jakarta Sans"],
+          "headline-md": ["Plus Jakarta Sans"],
+          "body-lg": ["Inter"],
+          "label-md": ["Inter"],
+          "headline-lg-mobile": ["Plus Jakarta Sans"],
+          "body-md": ["Inter"],
+          "micro-tech": ["JetBrains Mono"],
+          "label-sm": ["Inter"],
+          "headline-xl-mobile": ["Plus Jakarta Sans"],
+          "label-lg": ["Inter"],
+          "headline-sm": ["Plus Jakarta Sans"],
+          "body-sm": ["Inter"]
+        },
+        "fontSize": {
+          "headline-lg": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "700"}],
+          "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.03em", "fontWeight": "800"}],
+          "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+          "body-lg": ["16px", {"lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+          "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+          "headline-lg-mobile": ["26px", {"lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+          "body-md": ["14px", {"lineHeight": "22px", "letterSpacing": "-0.005em", "fontWeight": "400"}],
+          "micro-tech": ["10px", {"lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "500"}],
+          "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+          "headline-xl-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.025em", "fontWeight": "800"}],
+          "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "600"}],
+          "headline-sm": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "600"}],
+          "body-sm": ["12px", {"lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "400"}]
+        }
+      },
+    },
+  }
+</script><style>
+  @layer base{
+    body{overscroll-behavior:none;}
+    .pb-safe{padding-bottom:calc(env(safe-area-inset-bottom,0px));}
+    .pt-safe{padding-top:calc(env(safe-area-inset-top,0px));}
+  }
+  @keyframes softPulse{
+    0%,100%{transform:scale(1);box-shadow:0 0 20px -2px rgba(99,102,241,0.5), 0 0 10px rgba(76,215,246,0.35);}
+    50%{transform:scale(1.05);box-shadow:0 0 30px 2px rgba(76,215,246,0.6), 0 0 15px rgba(99,102,241,0.6);}
+  }
+  @keyframes cyberGrid{
+    0%{background-position:0 0;}
+    100%{background-position:24px 24px;}
+  }
+  @keyframes floatDrift1{
+    0%{transform:translateY(0px) translateX(0px);opacity:0.2;}
+    50%{transform:translateY(-45px) translateX(25px);opacity:0.85;}
+    100%{transform:translateY(-90px) translateX(10px);opacity:0;}
+  }
+  @keyframes floatDrift2{
+    0%{transform:translateY(0px) translateX(0px);opacity:0.3;}
+    50%{transform:translateY(-60px) translateX(-20px);opacity:0.9;}
+    100%{transform:translateY(-120px) translateX(-5px);opacity:0;}
+  }
+  @keyframes shimmerSweep{
+    0%{transform:translateX(-150%) skewX(-20deg);}
+    100%{transform:translateX(250%) skewX(-20deg);}
+  }
+  @keyframes radarRipple{
+    0%{transform:scale(0.8);opacity:0.9;}
+    100%{transform:scale(2.2);opacity:0;}
+  }
+  @keyframes neonBorderPulse{
+    0%,100%{box-shadow:0 0 15px rgba(76,215,246,0.4), inset 0 0 10px rgba(99,102,241,0.25);}
+    50%{box-shadow:0 0 26px rgba(76,215,246,0.7), 0 0 35px rgba(99,102,241,0.4), inset 0 0 14px rgba(76,215,246,0.35);}
+  }
+  @keyframes gentleWiggle{
+    0%,100%{transform:rotate(0deg);}
+    25%{transform:rotate(-4deg);}
+    75%{transform:rotate(4deg);}
+  }
+  @keyframes messageSlideUp{
+    0%{opacity:0;transform:translateY(12px) scale(0.98);}
+    100%{opacity:1;transform:translateY(0) scale(1);}
+  }
+
+  .animate-soft-pulse{animation:softPulse 3s cubic-bezier(0.4,0,0.6,1) infinite;}
+  .animate-float-1{animation:floatDrift1 6s ease-in-out infinite;}
+  .animate-float-2{animation:floatDrift2 8s ease-in-out infinite;}
+  .animate-float-3{animation:floatDrift1 7s ease-in-out 2s infinite;}
+  .animate-float-4{animation:floatDrift2 9s ease-in-out 1s infinite;}
+  .animate-radar{animation:radarRipple 2.2s cubic-bezier(0,0.2,0.8,1) infinite;}
+  .animate-shimmer{animation:shimmerSweep 4.5s cubic-bezier(0.4,0,0.2,1) infinite;}
+  .animate-neon-aura{animation:neonBorderPulse 2.8s ease-in-out infinite;}
+  .animate-wiggle{animation:gentleWiggle 4s ease-in-out infinite;}
+  .animate-msg-in{animation:messageSlideUp 0.45s cubic-bezier(0.16,1,0.3,1) both;}
+
+  .neon-btn-reaction:active{
+    transform:scale(0.96);
+    filter:brightness(1.2);
+  }
+
+  ::-webkit-scrollbar{display:none;}
+  body {
+    min-height: max(884px, 100dvh);
+  }
+</style></head><body class="bg-surface text-on-surface font-body-md text-body-md flex flex-col min-h-screen relative antialiased selection:bg-secondary/30 selection:text-secondary-fixed">
+<!-- Ambient Cyber Mesh & Kinetic Radial Glows with Floating Glowing Particles -->
+<div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+<div class="absolute -top-32 -left-32 w-96 h-96 bg-primary-container/20 rounded-full blur-[120px]"></div>
+<div class="absolute top-1/4 -right-32 w-96 h-96 bg-secondary/15 rounded-full blur-[120px]"></div>
+<div class="absolute -bottom-20 left-1/3 w-80 h-80 bg-tertiary-container/15 rounded-full blur-[130px]"></div>
+<div class="absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(circle, #c0c1ff 1px, transparent 1px); background-size: 24px 24px;"></div>
+<!-- Luminous Drifting Particle Sparks -->
+<div class="absolute top-[18%] left-[12%] w-1.5 h-1.5 rounded-full bg-secondary shadow-[0_0_10px_#4cd7f6] animate-float-1"></div>
+<div class="absolute top-[32%] right-[16%] w-2 h-2 rounded-full bg-primary shadow-[0_0_12px_#c0c1ff] animate-float-2"></div>
+<div class="absolute top-[52%] left-[22%] w-1 h-1 rounded-full bg-secondary-fixed shadow-[0_0_8px_#acedff] animate-float-3"></div>
+<div class="absolute top-[68%] right-[25%] w-1.5 h-1.5 rounded-full bg-tertiary-container shadow-[0_0_10px_#a078ff] animate-float-4"></div>
+<div class="absolute top-[82%] left-[30%] w-2 h-2 rounded-full bg-secondary shadow-[0_0_14px_#4cd7f6] animate-float-2"></div>
+<div class="absolute top-[45%] right-[8%] w-1.5 h-1.5 rounded-full bg-primary-container shadow-[0_0_8px_#8083ff] animate-float-1"></div>
+</div>
+<header class="fixed top-0 w-full z-50 pt-safe bg-[#0f131c]/80 backdrop-blur-2xl border-b border-white/[0.08] shadow-[0_4px_30px_rgba(0,0,0,0.5)]">
+<div class="h-16 px-margin flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<div class="relative p-1 rounded-xl bg-white/[0.04] border border-white/10 shadow-inner group">
+<img alt="SlotWise Logo" class="h-7 w-auto object-contain drop-shadow-[0_0_8px_rgba(192,193,255,0.4)] transition-transform duration-300 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/ALJJyrDGgae7CbIx5jGi59veDxiDB4sGIatelfzKOeSUg_xYUi6Ia_qwEMmZqEQMuDxErijYUtV5nGMUwfhcQ3DO0I7aC2UDjkfoucSvOv3wKM_FVGQj36wK8GMyjx7uxXZLzotOEDoo9az9x3pnA8T0J2mtzpm2AZzXhOVdmZ_VFETawp-uUPDsKXv-dENI9t9G_fRAI4gNUmCGw9MdGjAbTE5lJs3pLZDLww8fKEQZMjo"/>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm font-bold text-white tracking-tight drop-shadow-[0_0_12px_rgba(255,255,255,0.25)]">SlotWise</span>
+<div class="relative inline-flex items-center justify-center">
+<span class="absolute inset-0 rounded-full bg-secondary/30 animate-radar pointer-events-none"></span>
+<span class="relative px-2 py-0.5 rounded-full bg-secondary/15 text-secondary border border-secondary/40 font-micro-tech text-[10px] font-bold tracking-wider uppercase shadow-[0_0_10px_rgba(76,215,246,0.3)]">AI 2.4</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button aria-label="Notifications" class="w-10 h-10 flex items-center justify-center rounded-xl bg-white/[0.04] border border-white/[0.08] text-on-surface-variant hover:text-white hover:bg-white/[0.08] hover:border-secondary/40 transition-all active:scale-95 shadow-[0_0_12px_transparent] hover:shadow-[0_0_12px_rgba(76,215,246,0.2)]" type="button">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+</button>
+<div class="relative w-10 h-10 rounded-xl p-[1px] bg-gradient-to-tr from-secondary to-primary flex items-center justify-center shadow-[0_0_12px_rgba(76,215,246,0.25)] hover:shadow-[0_0_18px_rgba(76,215,246,0.5)] transition-shadow">
+<img alt="Profile" class="w-full h-full rounded-[11px] object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuY0Ce_R5dzMZxLQf_Zkz1HLIaR_cPZKERW93_jLCV5QQVyOuQDCjFBtddKEmaDMGtHRvxsEUNcD0xHsn6vr1FnJZzHRuaElLybBoryj4VKpRwoNpemb69oLPx1Jyo-6g4uTgg5v0vY1JIfyT6CUUkQWknyN0L6_KT6xV4bh-jzjttQMkaZMZP2SWCGU2uWVuLhaesYcREfisPitX3VTmXjdXQJ8fATmCoEBfrN6M"/>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-1 flex flex-col relative w-full pt-16 pb-36 z-10">
+<div class="flex flex-col w-full relative">
+<!-- Interactive Chat Sticky Subheader (Cyber Glass HUD) -->
+<div class="sticky top-0 z-30 bg-[#0f131c]/85 backdrop-blur-xl px-margin py-2.5 border-b border-white/[0.06] shadow-[0_4px_24px_rgba(0,0,0,0.6)] flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="relative w-10 h-10 rounded-xl bg-gradient-to-tr from-primary-container via-[#4338ca] to-secondary p-[1.5px] shadow-[0_0_16px_rgba(76,215,246,0.4)]">
+<div class="w-full h-full bg-[#0a0e17] rounded-[10px] flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">smart_toy</span>
+</div>
+<span class="absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full bg-secondary shadow-[0_0_8px_#4cd7f6] ring-2 ring-[#0f131c]"></span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-[16px] text-white font-bold tracking-tight">SlotWise AI</span>
+<!-- Online Radar Wave Tag -->
+<div class="relative inline-flex items-center">
+<span class="absolute inset-0 rounded-full bg-secondary/35 animate-radar pointer-events-none"></span>
+<span class="relative flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-secondary/15 text-secondary border border-secondary/35 font-micro-tech text-[10px] uppercase font-semibold shadow-[0_0_10px_rgba(76,215,246,0.3)]">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary shadow-[0_0_6px_#4cd7f6] animate-pulse"></span>
+<span>Online</span>
+</span>
+</div>
+</div>
+<p class="font-micro-tech text-[11px] text-on-surface-variant flex items-center gap-1">
+<span class="text-secondary/70 animate-pulse">◈</span> Natural language smart bookings
+      </p>
+</div>
+</div>
+<button aria-label="Conversation Settings" class="w-9 h-9 rounded-xl flex items-center justify-center bg-white/[0.04] border border-white/[0.08] hover:border-secondary/40 text-on-surface-variant hover:text-white transition-all active:scale-95" type="button">
+<span class="material-symbols-outlined text-[18px]">more_horiz</span>
+</button>
+</div>
+<!-- Quick Prompts Horizontal Carousel (Holographic Chips) -->
+<div class="px-margin py-2.5 overflow-x-auto no-scrollbar flex items-center gap-2 border-b border-white/[0.04] bg-[#0a0e17]/50 backdrop-blur-md">
+<button class="shrink-0 px-3.5 py-1.5 rounded-xl bg-white/[0.04] border border-white/10 hover:border-secondary/60 hover:bg-secondary/10 text-on-surface hover:text-white font-label-md text-label-md transition-all active:scale-95 shadow-[0_2px_12px_rgba(0,0,0,0.4)] flex items-center gap-1.5 group" onclick="sendQuickPrompt(this)" type="button">
+<span>🦷</span>
+<span class="group-hover:text-secondary-fixed transition-colors">Dentist tomorrow evening</span>
+</button>
+<button class="shrink-0 px-3.5 py-1.5 rounded-xl bg-white/[0.04] border border-white/10 hover:border-secondary/60 hover:bg-secondary/10 text-on-surface hover:text-white font-label-md text-label-md transition-all active:scale-95 shadow-[0_2px_12px_rgba(0,0,0,0.4)] flex items-center gap-1.5 group" onclick="sendQuickPrompt(this)" type="button">
+<span class="text-secondary">🔄</span>
+<span class="group-hover:text-secondary-fixed transition-colors">Reschedule with Dr. Mehta</span>
+</button>
+<button class="shrink-0 px-3.5 py-1.5 rounded-xl bg-white/[0.04] border border-white/10 hover:border-secondary/60 hover:bg-secondary/10 text-on-surface hover:text-white font-label-md text-label-md transition-all active:scale-95 shadow-[0_2px_12px_rgba(0,0,0,0.4)] flex items-center gap-1.5 group" onclick="sendQuickPrompt(this)" type="button">
+<span class="text-primary">📍</span>
+<span class="group-hover:text-secondary-fixed transition-colors">Show doctors near me</span>
+</button>
+<button class="shrink-0 px-3.5 py-1.5 rounded-xl bg-white/[0.04] border border-white/10 hover:border-error/60 hover:bg-error/10 text-on-surface hover:text-white font-label-md text-label-md transition-all active:scale-95 shadow-[0_2px_12px_rgba(0,0,0,0.4)] flex items-center gap-1.5 group" onclick="sendQuickPrompt(this)" type="button">
+<span class="text-error">✕</span>
+<span class="group-hover:text-error transition-colors">Cancel my appointment</span>
+</button>
+</div>
+<!-- Chat Messages Stream -->
+<div class="px-margin pt-4 pb-4 space-y-4" id="chat-stream">
+<!-- 1. AI Welcome Message -->
+<div class="flex items-start gap-2.5 max-w-[88%] animate-msg-in">
+<div class="w-7 h-7 rounded-lg bg-gradient-to-tr from-primary to-secondary text-[#0f131c] font-bold flex items-center justify-center shrink-0 shadow-[0_0_12px_rgba(192,193,255,0.4)] mt-0.5">
+<span class="material-symbols-outlined text-[15px]">auto_awesome</span>
+</div>
+<div class="flex flex-col gap-1.5">
+<div class="p-3.5 rounded-2xl rounded-tl-sm bg-white/[0.05] border border-white/10 backdrop-blur-xl text-white shadow-[0_8px_32px_rgba(0,0,0,0.37)] leading-relaxed">
+<p class="font-body-md text-body-md text-on-surface">
+          Hello <span class="font-semibold text-secondary-fixed drop-shadow-[0_0_8px_rgba(172,237,255,0.4)]">Demo User</span>! 👋 I can instantly scan availability, reschedule existing bookings, or match you with the highest-rated local specialists. What are you looking to book today?
+        </p>
+</div>
+<span class="font-micro-tech text-[10px] text-outline px-1 tracking-wider">02:14 PM • TELEMETRY SYNCED</span>
+</div>
+</div>
+<!-- 2. User Query Message -->
+<div class="flex items-end justify-end gap-2 max-w-[85%] self-end ml-auto animate-msg-in" style="animation-delay: 0.1s;">
+<div class="flex flex-col items-end gap-1.5">
+<div class="p-3.5 rounded-2xl rounded-br-sm bg-gradient-to-br from-[#4f46e5] via-[#6366f1] to-[#3b82f6] text-white shadow-[0_0_24px_rgba(99,102,241,0.45)] border border-white/20 leading-relaxed">
+<p class="font-body-md text-body-md font-medium">
+          I need a consultation with a general physician tomorrow afternoon after 3 PM please.
+        </p>
+</div>
+<div class="flex items-center gap-1.5 px-1">
+<span class="font-micro-tech text-[10px] text-outline">02:15 PM</span>
+<span class="material-symbols-outlined text-[14px] text-secondary drop-shadow-[0_0_6px_#4cd7f6]">done_all</span>
+</div>
+</div>
+</div>
+<!-- 3. Parsed Intent Hologram Card (Cyber HUD Style) -->
+<div class="flex items-start gap-2.5 max-w-[94%] animate-msg-in" style="animation-delay: 0.2s;">
+<div class="w-7 h-7 rounded-lg bg-gradient-to-tr from-secondary to-primary-container text-[#0a0e17] flex items-center justify-center shrink-0 shadow-[0_0_12px_rgba(76,215,246,0.4)] mt-0.5">
+<span class="material-symbols-outlined text-[15px]">psychology</span>
+</div>
+<div class="flex-1 flex flex-col gap-2.5">
+<!-- Hologram Spec Card with Shimmer Wave Sweep Reflection -->
+<div class="relative p-4 rounded-2xl bg-gradient-to-b from-[#181b25]/90 to-[#0a0e17]/95 border border-secondary/35 backdrop-blur-xl shadow-[0_0_30px_rgba(76,215,246,0.16)] flex flex-col gap-3 overflow-hidden group">
+<!-- Shimmer Wave Reflection Sweep -->
+<div class="absolute inset-0 w-1/2 h-full bg-gradient-to-r from-transparent via-secondary/15 to-transparent pointer-events-none animate-shimmer"></div>
+<!-- Neon decorative top corner line -->
+<div class="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-secondary to-transparent opacity-80"></div>
+<div class="absolute -right-8 -top-8 w-24 h-24 bg-secondary/10 rounded-full blur-xl pointer-events-none"></div>
+<div class="flex items-center justify-between pb-1 border-b border-white/[0.06] relative z-10">
+<span class="font-micro-tech text-[11px] uppercase font-bold tracking-widest text-secondary flex items-center gap-1.5 drop-shadow-[0_0_8px_rgba(76,215,246,0.5)]">
+<span class="material-symbols-outlined text-[14px] animate-pulse">tune</span>
+            Parsed Booking Request
+          </span>
+<span class="px-2.5 py-0.5 rounded-full bg-secondary/20 text-secondary-fixed border border-secondary/50 font-micro-tech text-[11px] font-bold tracking-wider shadow-[0_0_12px_rgba(76,215,246,0.4)] flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary shadow-[0_0_6px_#4cd7f6] animate-ping"></span>
+            99.4% Match
+          </span>
+</div>
+<div class="grid grid-cols-1 gap-2 relative z-10">
+<div class="flex items-center justify-between p-2.5 rounded-xl bg-white/[0.03] border border-white/[0.06] hover:border-primary/40 transition-colors">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-lg bg-primary/10 border border-primary/25 flex items-center justify-center text-primary shadow-[0_0_8px_rgba(192,193,255,0.2)]">
+<span class="material-symbols-outlined text-[15px]">stethoscope</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant font-medium">Specialty</span>
+</div>
+<span class="font-label-lg text-label-lg font-semibold text-white tracking-tight">General Physician</span>
+</div>
+<div class="flex items-center justify-between p-2.5 rounded-xl bg-white/[0.03] border border-white/[0.06] hover:border-secondary/40 transition-colors">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-lg bg-secondary/10 border border-secondary/25 flex items-center justify-center text-secondary shadow-[0_0_8px_rgba(76,215,246,0.2)]">
+<span class="material-symbols-outlined text-[15px]">event</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant font-medium">Preferred Day</span>
+</div>
+<span class="font-label-lg text-label-lg font-semibold text-white tracking-tight">Tomorrow (Tue, Oct 15)</span>
+</div>
+<div class="flex items-center justify-between p-2.5 rounded-xl bg-white/[0.03] border border-white/[0.06] hover:border-tertiary/40 transition-colors">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-lg bg-tertiary-container/20 border border-tertiary/25 flex items-center justify-center text-tertiary shadow-[0_0_8px_rgba(160,120,255,0.2)]">
+<span class="material-symbols-outlined text-[15px]">schedule</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant font-medium">Time Window</span>
+</div>
+<span class="font-label-lg text-label-lg font-semibold text-secondary-fixed tracking-tight font-micro-tech text-[13px]">03:00 PM – 06:00 PM</span>
+</div>
+</div>
+</div>
+<!-- 4. AI Explanation Text -->
+<div class="p-3.5 rounded-2xl rounded-tl-sm bg-white/[0.05] border border-white/10 backdrop-blur-xl text-on-surface shadow-[0_8px_32px_rgba(0,0,0,0.37)]">
+<p class="font-body-md text-body-md">
+          I found <span class="font-semibold text-secondary drop-shadow-[0_0_8px_rgba(76,215,246,0.3)]">2 verified matching slots</span> with top-rated medical providers right in your area:
+        </p>
+</div>
+<!-- 5. Interactive Suggested Slot Cards (Cyber Obsidian Glass) -->
+<div class="flex flex-col gap-3 mt-1">
+<!-- Card A: Dr. Aarav Mehta -->
+<div class="relative p-4 rounded-2xl bg-gradient-to-b from-[#1c1f29]/95 to-[#0a0e17]/95 border border-white/10 hover:border-secondary/50 shadow-[0_8px_25px_rgba(0,0,0,0.5)] flex flex-col gap-3.5 transition-all duration-300 hover:shadow-[0_0_25px_rgba(76,215,246,0.25)] group">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<div class="relative w-13 h-13 rounded-xl p-[1.5px] bg-gradient-to-br from-secondary via-primary to-transparent shadow-[0_0_12px_rgba(76,215,246,0.3)]">
+<img class="w-12 h-12 rounded-[10px] object-cover" data-alt="Warm and friendly portrait of Dr Aarav Mehta, a male physician in a navy doctor uniform wearing a stethoscope, high key natural lighting, medical office backdrop, studio quality" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPXYuBq_D1iYDP6a52TOIRyvNzZpcsqnmKzT3JOtFzKYYW6dF47HWbhAEtVo2N2GMrwAxAPGJ-tzHYtsYeKi1-JblksnkWbO3UMcxg9J18TQzOoM6jymONfrOyYV8xQL85aTU7Yf5CHzR8ccWifu3gWZfpBsAHOKbW5-DO_HI5xigi4tj4-V6JdBi-wrzeeB7lf8LJ44fveke3sh0voHCVO0mjVdy2kwZspA3XHCE"/>
+<span class="absolute -bottom-1 -right-1 w-3.5 h-3.5 bg-[#0a0e17] rounded-full flex items-center justify-center">
+<span class="w-2 h-2 rounded-full bg-secondary animate-ping"></span>
+</span>
+</div>
+<div>
+<div class="flex items-center gap-1.5">
+<h2 class="font-headline-sm text-[17px] text-white font-bold tracking-tight">Dr. Aarav Mehta</h2>
+<span class="material-symbols-outlined text-[16px] text-secondary drop-shadow-[0_0_6px_#4cd7f6]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<div class="flex items-center gap-2 font-label-sm text-label-sm text-on-surface-variant mt-0.5">
+<span class="flex items-center text-amber-400 font-semibold gap-0.5 drop-shadow-[0_0_6px_rgba(251,191,36,0.4)]">
+<span class="material-symbols-outlined text-[13px]" style="font-variation-settings: 'FILL' 1;">star</span> 4.9
+                  </span>
+<span class="text-outline/60">•</span>
+<span>120+ reviews</span>
+<span class="text-outline/60">•</span>
+<span class="text-secondary font-medium tracking-tight">0.8 mi</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-headline-md text-headline-md text-secondary font-black tracking-tight drop-shadow-[0_0_12px_rgba(76,215,246,0.5)]">$45</span>
+<span class="font-micro-tech text-[9px] uppercase tracking-wider text-outline">Verified Rate</span>
+</div>
+</div>
+<div class="flex items-center justify-between p-2.5 rounded-xl bg-white/[0.03] border border-white/[0.06]">
+<div class="flex items-center gap-2 text-white">
+<span class="material-symbols-outlined text-[17px] text-secondary drop-shadow-[0_0_8px_#4cd7f6]">alarm</span>
+<span class="font-label-lg text-label-lg font-semibold tracking-tight">Tomorrow at 03:30 PM</span>
+</div>
+<span class="font-micro-tech text-[10px] px-2 py-0.5 rounded-full bg-secondary/15 text-secondary border border-secondary/30 font-semibold uppercase">20 mins</span>
+</div>
+<div class="flex gap-2">
+<!-- Lightning Instant Book with Glowing Neon Border Aura & Micro-Scale -->
+<button class="relative flex-1 h-12 rounded-xl bg-gradient-to-r from-[#4f46e5] via-[#6366f1] to-[#06b6d4] text-white font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 shadow-[0_0_24px_rgba(99,102,241,0.5)] active:scale-95 transition-all hover:brightness-110 animate-neon-aura neon-btn-reaction overflow-hidden" onclick="confirmBooking('Dr. Aarav Mehta', 'Tomorrow at 03:30 PM', '$45')" type="button">
+<span class="absolute inset-0 bg-white/10 opacity-0 hover:opacity-100 transition-opacity"></span>
+<span class="material-symbols-outlined text-[18px] text-secondary-fixed animate-pulse">bolt</span>
+<span class="tracking-wide">⚡ Instant Book</span>
+</button>
+<button aria-label="View doctor profile" class="w-12 h-12 rounded-xl bg-white/[0.04] border border-white/[0.08] hover:border-secondary/40 text-on-surface hover:text-white flex items-center justify-center transition-all active:scale-95 hover:shadow-[0_0_12px_rgba(76,215,246,0.2)]" type="button">
+<span class="material-symbols-outlined text-[20px]">person</span>
+</button>
+</div>
+</div>
+<!-- Card B: Dr. Neha Sharma -->
+<div class="relative p-4 rounded-2xl bg-gradient-to-b from-[#1c1f29]/95 to-[#0a0e17]/95 border border-white/10 hover:border-primary/50 shadow-[0_8px_25px_rgba(0,0,0,0.5)] flex flex-col gap-3.5 transition-all duration-300 hover:shadow-[0_0_25px_rgba(192,193,255,0.25)] group">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<div class="relative w-13 h-13 rounded-xl p-[1.5px] bg-gradient-to-br from-primary via-tertiary to-transparent shadow-[0_0_12px_rgba(192,193,255,0.3)]">
+<img class="w-12 h-12 rounded-[10px] object-cover" data-alt="Professional headshot of Dr Neha Sharma, an experienced female doctor smiling warmly in clinical attire with soft ambient clinic lighting and neutral tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJscX8QUag3ZDavRul3Eevzp5B5wASxM5fy74QuclAXZbN5caj4Zgt1C41Ndv7Iv_mx0BAyUYEYWbdVwyHrhpBr5AGzheGwEorLs2qt0L5PfFoTyLY0zf5Ibj-iu_HevY-Yek1hfO_9fBVDCbM1eZ0K5kGRY65iJ_XyDY0zv5LfVQkaQMGTRN5v8H2gRPd6bnBTcR71x5AX-D2R3xiytpjx4NRxVPYM5TY2sXc1JA"/>
+<span class="absolute -bottom-1 -right-1 w-3.5 h-3.5 bg-[#0a0e17] rounded-full flex items-center justify-center">
+<span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+</span>
+</div>
+<div>
+<div class="flex items-center gap-1.5">
+<h2 class="font-headline-sm text-[17px] text-white font-bold tracking-tight">Dr. Neha Sharma</h2>
+<span class="material-symbols-outlined text-[16px] text-primary drop-shadow-[0_0_6px_#c0c1ff]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<div class="flex items-center gap-2 font-label-sm text-label-sm text-on-surface-variant mt-0.5">
+<span class="flex items-center text-amber-400 font-semibold gap-0.5 drop-shadow-[0_0_6px_rgba(251,191,36,0.4)]">
+<span class="material-symbols-outlined text-[13px]" style="font-variation-settings: 'FILL' 1;">star</span> 4.8
+                  </span>
+<span class="text-outline/60">•</span>
+<span>94 reviews</span>
+<span class="text-outline/60">•</span>
+<span class="text-secondary font-medium tracking-tight">1.4 mi</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-headline-md text-headline-md text-white font-black tracking-tight drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">$50</span>
+<span class="font-micro-tech text-[9px] uppercase tracking-wider text-outline">Verified Rate</span>
+</div>
+</div>
+<div class="flex items-center justify-between p-2.5 rounded-xl bg-white/[0.03] border border-white/[0.06]">
+<div class="flex items-center gap-2 text-white">
+<span class="material-symbols-outlined text-[17px] text-primary drop-shadow-[0_0_8px_#c0c1ff]">alarm</span>
+<span class="font-label-lg text-label-lg font-semibold tracking-tight">Tomorrow at 04:45 PM</span>
+</div>
+<span class="font-micro-tech text-[10px] px-2 py-0.5 rounded-full bg-primary/15 text-primary border border-primary/30 font-semibold uppercase">30 mins</span>
+</div>
+<div class="flex gap-2">
+<button class="flex-1 h-12 rounded-xl bg-white/[0.06] hover:bg-white/[0.12] border border-white/10 hover:border-primary/50 text-white font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 transition-all active:scale-95 shadow-[0_4px_16px_rgba(0,0,0,0.3)] hover:shadow-[0_0_20px_rgba(192,193,255,0.3)] neon-btn-reaction" onclick="confirmBooking('Dr. Neha Sharma', 'Tomorrow at 04:45 PM', '$50')" type="button">
+<span class="material-symbols-outlined text-[18px] text-primary">calendar_month</span>
+<span class="tracking-wide">Instant Book</span>
+</button>
+<button aria-label="View doctor profile" class="w-12 h-12 rounded-xl bg-white/[0.04] border border-white/[0.08] hover:border-secondary/40 text-on-surface hover:text-white flex items-center justify-center transition-all active:scale-95 hover:shadow-[0_0_12px_rgba(76,215,246,0.2)]" type="button">
+<span class="material-symbols-outlined text-[20px]">person</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- 6. Typing Indicator Preview Bubble (Interactive Glowing Pulsing Hologram) -->
+<div class="flex items-center gap-2.5 max-w-[45%] animate-msg-in" id="typing-indicator" style="animation-delay: 0.3s;">
+<div class="w-7 h-7 rounded-lg bg-secondary/15 border border-secondary/40 text-secondary flex items-center justify-center shrink-0 shadow-[0_0_12px_rgba(76,215,246,0.35)]">
+<span class="material-symbols-outlined text-[14px] animate-pulse">auto_awesome</span>
+</div>
+<div class="relative px-4 py-3 rounded-2xl rounded-tl-sm bg-gradient-to-r from-white/[0.06] via-white/[0.03] to-secondary/10 border border-secondary/30 backdrop-blur-md flex items-center gap-2 shadow-[0_0_18px_rgba(76,215,246,0.15)] overflow-hidden">
+<div class="absolute -inset-1 bg-gradient-to-r from-transparent via-secondary/10 to-transparent blur-sm pointer-events-none"></div>
+<span class="w-2.5 h-2.5 rounded-full bg-secondary shadow-[0_0_8px_#4cd7f6] animate-bounce" style="animation-delay: 0s;"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-primary shadow-[0_0_8px_#c0c1ff] animate-bounce" style="animation-delay: 0.2s;"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary shadow-[0_0_8px_#d0bcff] animate-bounce" style="animation-delay: 0.4s;"></span>
+</div>
+</div>
+</div>
+<!-- Interactive Modal Dialog Confirmation -->
+<div class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#0a0e17]/80 backdrop-blur-xl" id="booking-modal">
+<div class="w-full max-w-sm rounded-3xl bg-gradient-to-b from-[#181b25] to-[#0a0e17] border border-secondary/40 p-6 shadow-[0_0_50px_rgba(76,215,246,0.25)] flex flex-col gap-4 text-center relative overflow-hidden animate-msg-in">
+<div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-secondary to-tertiary"></div>
+<div class="w-14 h-14 rounded-2xl bg-secondary/15 border border-secondary/40 text-secondary flex items-center justify-center mx-auto shadow-[0_0_20px_rgba(76,215,246,0.4)]">
+<span class="material-symbols-outlined text-[32px]">task_alt</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-white tracking-tight" id="modal-title">Slot Reserved!</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1" id="modal-desc">Your appointment has been coordinated with the doctor's calendar.</p>
+</div>
+<div class="p-3.5 rounded-xl bg-white/[0.03] border border-white/[0.08] text-left flex flex-col gap-2 font-micro-tech text-[12px]">
+<div class="flex justify-between items-center">
+<span class="text-outline uppercase">Provider</span>
+<span class="font-semibold text-white font-body-md" id="modal-provider">Dr. Aarav Mehta</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-outline uppercase">Schedule</span>
+<span class="font-semibold text-secondary font-body-md" id="modal-time">Tomorrow at 03:30 PM</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-outline uppercase">Consultation Fee</span>
+<span class="font-bold text-secondary-fixed text-[14px]" id="modal-fee">$45</span>
+</div>
+</div>
+<button class="w-full h-12 rounded-xl bg-gradient-to-r from-primary-container via-primary to-secondary text-[#0a0e17] font-label-lg text-label-lg font-bold shadow-[0_0_20px_rgba(76,215,246,0.35)] active:scale-95 transition-transform neon-btn-reaction" onclick="closeModal()" type="button">
+      Done
+    </button>
+</div>
+</div>
+<!-- Chat Input Fixed Cyber Console Deck Area -->
+<div class="sticky bottom-0 z-20 w-full px-margin py-3 bg-[#0f131c]/90 backdrop-blur-2xl border-t border-white/[0.08] shadow-[0_-10px_35px_rgba(0,0,0,0.6)]">
+<form class="relative flex items-center gap-2.5" id="chat-form" onsubmit="handleSend(event)">
+<div class="relative flex-1 flex items-center">
+<input autocomplete="off" class="w-full h-12 pl-4 pr-11 rounded-2xl bg-white/[0.04] border border-white/10 text-white placeholder:text-outline/70 font-body-md text-body-md shadow-inner outline-none focus:border-secondary/60 focus:bg-white/[0.07] focus:ring-1 focus:ring-secondary/40 transition-all" id="chat-input" placeholder="Ask anything (e.g. book yoga on Saturday)..." type="text"/>
+<button aria-label="Voice input" class="absolute right-2.5 w-8 h-8 rounded-full flex items-center justify-center text-outline hover:text-secondary hover:bg-secondary/15 transition-all" id="mic-btn" onclick="toggleMic()" type="button">
+<span class="material-symbols-outlined text-[20px]">mic</span>
+</button>
+</div>
+<button aria-label="Send message" class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-primary-container via-[#4f46e5] to-secondary text-white flex items-center justify-center shadow-[0_0_20px_rgba(76,215,246,0.4)] active:scale-95 hover:brightness-110 transition-all shrink-0 border border-white/20 neon-btn-reaction" type="submit">
+<span class="material-symbols-outlined text-[20px] drop-shadow-[0_0_6px_rgba(255,255,255,0.6)]">arrow_upward</span>
+</button>
+</form>
+<!-- Cybernetic Telemetry Status Bar -->
+<div class="flex items-center justify-center gap-2 mt-2">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary shadow-[0_0_8px_#4cd7f6] animate-pulse"></span>
+<span class="font-micro-tech text-[10px] text-outline tracking-wider uppercase">SlotWise AI v2.4 • Real-time calendar syncing active</span>
+</div>
+</div>
+</div>
+<script>
+  function sendQuickPrompt(btn) {
+    const text = btn.innerText.replace(/^[^\w\s]+/, '').trim();
+    const input = document.getElementById('chat-input');
+    input.value = text;
+    input.focus();
+  }
+
+  function handleSend(e) {
+    e.preventDefault();
+    const input = document.getElementById('chat-input');
+    const query = input.value.trim();
+    if (!query) return;
+
+    const stream = document.getElementById('chat-stream');
+    const typing = document.getElementById('typing-indicator');
+
+    // Create user message with subtle slide-up animation
+    const userMsg = document.createElement('div');
+    userMsg.className = 'flex items-end justify-end gap-2 max-w-[85%] self-end ml-auto animate-msg-in';
+    userMsg.innerHTML = `
+      <div class="flex flex-col items-end gap-1.5">
+        <div class="p-3.5 rounded-2xl rounded-br-sm bg-gradient-to-br from-[#4f46e5] via-[#6366f1] to-[#3b82f6] text-white shadow-[0_0_24px_rgba(99,102,241,0.45)] border border-white/20 leading-relaxed">
+          <p class="font-body-md text-body-md font-medium">${escapeHtml(query)}</p>
+        </div>
+        <div class="flex items-center gap-1.5 px-1">
+          <span class="font-micro-tech text-[10px] text-outline">Just now</span>
+          <span class="material-symbols-outlined text-[14px] text-secondary drop-shadow-[0_0_6px_#4cd7f6]">done</span>
+        </div>
+      </div>
+    `;
+
+    stream.insertBefore(userMsg, typing);
+    input.value = '';
+    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+
+    // Mock AI response response after brief pause with slide-up animation
+    setTimeout(() => {
+      const aiReply = document.createElement('div');
+      aiReply.className = 'flex items-start gap-2.5 max-w-[88%] animate-msg-in';
+      aiReply.innerHTML = `
+        <div class="w-7 h-7 rounded-lg bg-gradient-to-tr from-primary to-secondary text-[#0f131c] font-bold flex items-center justify-center shrink-0 shadow-[0_0_12px_rgba(192,193,255,0.4)] mt-0.5">
+          <span class="material-symbols-outlined text-[15px]">auto_awesome</span>
+        </div>
+        <div class="flex flex-col gap-1.5">
+          <div class="p-3.5 rounded-2xl rounded-tl-sm bg-white/[0.05] border border-white/10 backdrop-blur-xl text-white shadow-[0_8px_32px_rgba(0,0,0,0.37)] leading-relaxed">
+            <p class="font-body-md text-body-md text-on-surface">
+              Checking calendar schedules for "${escapeHtml(query)}"... Found 3 available slots that fit your preferences.
+            </p>
+          </div>
+          <span class="font-micro-tech text-[10px] text-outline px-1 tracking-wider">Just now</span>
+        </div>
+      `;
+      stream.insertBefore(aiReply, typing);
+      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    }, 1200);
+  }
+
+  function confirmBooking(provider, time, fee) {
+    document.getElementById('modal-provider').innerText = provider;
+    document.getElementById('modal-time').innerText = time;
+    document.getElementById('modal-fee').innerText = fee;
+    document.getElementById('booking-modal').classList.remove('hidden');
+  }
+
+  function closeModal() {
+    document.getElementById('booking-modal').classList.add('hidden');
+  }
+
+  function toggleMic() {
+    const micBtn = document.getElementById('mic-btn');
+    micBtn.classList.toggle('text-error');
+    micBtn.classList.toggle('scale-110');
+  }
+
+  function escapeHtml(str) {
+    return str.replace(/[&<>"']/g, function(m) {
+      return {
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#039;'
+      }[m];
+    });
+  }
+</script>
+<footer class="mt-auto px-margin py-4 text-center">
+<p class="font-micro-tech text-[10px] text-outline/60 select-none tracking-wider uppercase">Demo data only. No real personal or health information.</p>
+</footer>
+</main>
+<!-- Floating HUD Quick Assistant Trigger with Interactive Wiggle & Sparkle Particles -->
+<div class="fixed bottom-24 right-4 z-40 pb-safe">
+<div class="relative group">
+<!-- Floating Sparkle Particles hovering around AI Button -->
+<span class="absolute -top-1.5 -left-1.5 w-2 h-2 rounded-full bg-secondary shadow-[0_0_10px_#4cd7f6] animate-ping pointer-events-none"></span>
+<span class="absolute -bottom-1 -right-1 w-1.5 h-1.5 rounded-full bg-primary shadow-[0_0_8px_#c0c1ff] animate-pulse pointer-events-none"></span>
+<span class="absolute top-1/2 -right-2.5 w-1 h-1 rounded-full bg-secondary-fixed shadow-[0_0_6px_#acedff] pointer-events-none"></span>
+<button aria-label="AI Booking Assistant" class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-primary-container via-[#4f46e5] to-secondary text-white flex items-center justify-center animate-soft-pulse active:scale-95 transition-transform border border-white/30 neon-btn-reaction animate-wiggle" type="button">
+<span class="material-symbols-outlined text-[26px] drop-shadow-[0_0_8px_rgba(255,255,255,0.7)]">smart_toy</span>
+</button>
+</div>
+</div>
+<!-- Futuristic Bottom Nav Chrome -->
+<nav class="fixed bottom-0 w-full z-50 pb-safe bg-[#0a0e17]/90 backdrop-blur-2xl border-t border-white/[0.08] shadow-[0_-4px_25px_rgba(0,0,0,0.7)]" data-active-classes="text-secondary font-semibold">
+<div class="flex justify-around items-center h-16 px-space-xs">
+<a class="flex flex-col items-center justify-center w-14 h-12 text-on-surface-variant hover:text-white transition-colors" data-path="discover" href="#">
+<span class="material-symbols-outlined text-[22px]">calendar_month</span>
+<span class="font-micro-tech text-[10px] mt-1 tracking-wider">Discover</span>
+</a>
+<a class="flex flex-col items-center justify-center w-14 h-12 text-on-surface-variant hover:text-white transition-colors" data-path="providers" href="#">
+<span class="material-symbols-outlined text-[22px]">medical_services</span>
+<span class="font-micro-tech text-[10px] mt-1 tracking-wider">Providers</span>
+</a>
+<a aria-current="page" class="flex flex-col items-center justify-center w-14 h-12 transition-all text-secondary font-semibold" data-path="ai-assistant" href="#">
+<div class="relative flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px] drop-shadow-[0_0_8px_#4cd7f6]">smart_toy</span>
+<span class="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-secondary shadow-[0_0_6px_#4cd7f6] ring-2 ring-[#0a0e17] animate-pulse"></span>
+</div>
+<span class="font-micro-tech text-[10px] mt-1 tracking-wider text-secondary drop-shadow-[0_0_6px_rgba(76,215,246,0.5)]">Assistant</span>
+</a>
+<a class="flex flex-col items-center justify-center w-14 h-12 text-on-surface-variant hover:text-white transition-colors" data-path="appointments" href="#">
+<div class="relative flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">schedule</span>
+<span class="absolute -top-1 -right-2 px-1.5 rounded-full bg-primary text-[#0a0e17] font-micro-tech text-[9px] leading-tight font-bold shadow-[0_0_8px_rgba(192,193,255,0.5)]">2</span>
+</div>
+<span class="font-micro-tech text-[10px] mt-1 tracking-wider">Bookings</span>
+</a>
+<a class="flex flex-col items-center justify-center w-14 h-12 text-on-surface-variant hover:text-white transition-colors" data-path="profile" href="#">
+<span class="material-symbols-outlined text-[22px]">account_circle</span>
+<span class="font-micro-tech text-[10px] mt-1 tracking-wider">Profile</span>
+</a>
+</div>
+</nav>
+</body></html>
