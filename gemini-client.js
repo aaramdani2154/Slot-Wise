@@ -57,6 +57,16 @@
       }
     }
 
+    cleanKey(key) {
+      if (!key) return '';
+      let k = key.trim();
+      // If user prepended AIzasy to key (e.g. AIzasyAQ...), strip accidental prefix
+      if (/^AIzasy(AQ\..+)$/i.test(k)) {
+        k = k.replace(/^AIzasy/i, '');
+      }
+      return k.trim();
+    }
+
     isConfigured() {
       return Boolean(this.apiKey && this.apiKey.length > 5);
     }
@@ -70,7 +80,7 @@
     }
 
     setKey(key) {
-      this.apiKey = (key || '').trim();
+      this.apiKey = this.cleanKey(key);
       if (this.apiKey) {
         localStorage.setItem(GEMINI_STORAGE_KEY, this.apiKey);
         if (window.__ENV__) {
@@ -96,7 +106,7 @@
 
     // Ping the Gemini API to test validity of a key
     async testConnection(testKey = null, testModel = null) {
-      const keyToUse = (testKey || this.apiKey || '').trim();
+      const keyToUse = this.cleanKey(testKey || this.apiKey);
       const modelToUse = testModel || this.model || 'gemini-1.5-flash';
 
       if (!keyToUse) {
@@ -236,7 +246,8 @@ ${providersList}
 
     // Call Google Gemini REST API
     async callGeminiAPI(userMessage, context) {
-      const url = `https://generativelanguage.googleapis.com/v1beta/models/${this.model}:generateContent?key=${encodeURIComponent(this.apiKey)}`;
+      const activeKey = this.cleanKey(this.apiKey);
+      const url = `https://generativelanguage.googleapis.com/v1beta/models/${this.model}:generateContent?key=${encodeURIComponent(activeKey)}`;
       
       const systemPrompt = this.buildSystemPrompt(context);
 
