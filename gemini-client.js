@@ -34,15 +34,14 @@
     }
 
     init() {
-      // 1. Check LocalStorage
+      // 1. Prioritize window.__ENV__.GEMINI_API_KEY if configured
       const savedKey = localStorage.getItem(GEMINI_STORAGE_KEY);
       const savedModel = localStorage.getItem(GEMINI_MODEL_KEY);
 
-      if (savedKey) {
-        this.apiKey = savedKey.trim();
-      } else if (window.__ENV__ && window.__ENV__.GEMINI_API_KEY) {
-        // 2. Check window.__ENV__
+      if (window.__ENV__ && window.__ENV__.GEMINI_API_KEY && window.__ENV__.GEMINI_API_KEY.trim().length > 5) {
         this.apiKey = window.__ENV__.GEMINI_API_KEY.trim();
+      } else if (savedKey && savedKey.trim().length > 5) {
+        this.apiKey = savedKey.trim();
       }
 
       if (savedModel) {
